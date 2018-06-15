@@ -75,7 +75,7 @@
                                                 <field name="match_id" placeholder="Choose the match..."/>
                                             </div>
                                         </div>
-                                        <group string="Score" style="text-align: center;">
+                                        <group string="Bet score" style="text-align: center;">
                                             <h3>
                                                 <field name="flag_home" widget="image" class="oe_inline" options="{&quot;size&quot;: [45, 31]}" style="margin-right: 2%%; top: 14px;"/>
                                                 <field name="team_home" class="oe_inline" style="margin-right: 5%%;"/> <field name="score_home" style="width:5%%;"/> 
@@ -168,7 +168,7 @@
                                 <field name="match_id" placeholder="Choose the match..."/>
                             </div>
                         </div>
-                        <group string="Score" style="text-align: center;">
+                        <group string="Bet score" style="text-align: center;">
                             <h3>
                                 <field name="flag_home" widget="image" class="oe_inline" options="{&quot;size&quot;: [45, 31]}" style="margin-right: 2%%; top: 14px;"/>
                                 <field name="team_home" class="oe_inline" style="margin-right: 5%%;"/> <field name="score_home" style="width:5%%;"/> 
@@ -235,12 +235,15 @@
             <field name="arch" type="xml">
                 <form string="Teams">
                     <sheet>
-                        <field name="flag" widget="image" class="oe_avatar" options="{&quot;size&quot;: [90, 63]}"/>
-                        <div class="oe_title">
+                        <group style="text-align: center;">
+                            <field name="flag" widget="image" options="{&quot;size&quot;: [90, 63]}" nolabel="1" class="oe_inline"/>
+                        </group>
+                        <br/>
+                        <group style="text-align: center;">
                             <h1>
                                 <field name="name"/>
                             </h1>
-                        </div>
+                        </group>
                     </sheet>
                 </form>
             </field>
@@ -293,8 +296,9 @@
             <field name="arch" type="xml">
                 <form string="Matches">
                     <header>
-                        <button name="set_as_finished" type="object" string="Finish" class="oe_highlight" states="to_play"/>
-                        <button name="set_as_to_play" type="object" string="To play" states="finished"/>
+                        <button name="add_your_bet" type="object" string="Bet!" class="oe_highlight" states="to_play"/>
+                        <button name="set_as_finished" type="object" string="Finish" class="oe_highlight" states="to_play" groups="anb_russia_2018_sweepstake.sweepstake_admin_group_user"/>
+                        <button name="set_as_to_play" type="object" string="To play" states="finished" groups="anb_russia_2018_sweepstake.sweepstake_admin_group_user"/>
                         <field name="state" widget="statusbar" nolabel="1" statusbar_visible="to_play,finished"/>
                     </header>
                     <sheet>
@@ -345,7 +349,7 @@
                                                 <field name="match_id" placeholder="Choose the match..."/>
                                             </div>
                                         </div>
-                                        <group string="Score" style="text-align: center;">
+                                        <group string="Bet score" style="text-align: center;">
                                             <h3>
                                                 <field name="flag_home" widget="image" class="oe_inline" options="{&quot;size&quot;: [45, 31]}" style="margin-right: 2%%; top: 14px;"/>
                                                 <field name="team_home" class="oe_inline" style="margin-right: 5%%;"/> <field name="score_home" style="width:5%%;"/> 
@@ -399,10 +403,10 @@
 
         <menuitem id="menu_rwc" groups="sweepstake_player_group_user" sequence="16" name="Sweepstake"/>
             <menuitem id="menu_admin_rwc_config" parent="anb_russia_2018_sweepstake.menu_rwc" groups="sweepstake_admin_group_user" sequence="17" name="Settings"/>
-                <menuitem action="action_admin_rwc_open_player" id="menu_admin_rwc_player" parent="anb_russia_2018_sweepstake.menu_admin_rwc_config" groups="sweepstake_admin_group_user" sequence="16" name="Players"/>
+                <menuitem action="action_admin_rwc_open_match" id="menu_admin_rwc_match" parent="anb_russia_2018_sweepstake.menu_admin_rwc_config" groups="sweepstake_admin_group_user" sequence="16" name="Matches"/>
                 <menuitem action="action_admin_rwc_open_bet" id="menu_admin_rwc_bet" parent="anb_russia_2018_sweepstake.menu_admin_rwc_config" groups="sweepstake_admin_group_user" sequence="17" name="Bets"/>
-                <menuitem action="action_admin_rwc_open_team" id="menu_admin_rwc_team" parent="anb_russia_2018_sweepstake.menu_admin_rwc_config" groups="sweepstake_admin_group_user" sequence="18" name="Teams"/>
-                <menuitem action="action_admin_rwc_open_match" id="menu_admin_rwc_match" parent="anb_russia_2018_sweepstake.menu_admin_rwc_config" groups="sweepstake_admin_group_user" sequence="19" name="Matches"/>
+                <menuitem action="action_admin_rwc_open_player" id="menu_admin_rwc_player" parent="anb_russia_2018_sweepstake.menu_admin_rwc_config" groups="sweepstake_admin_group_user" sequence="18" name="Players"/>
+                <menuitem action="action_admin_rwc_open_team" id="menu_admin_rwc_team" parent="anb_russia_2018_sweepstake.menu_admin_rwc_config" groups="sweepstake_admin_group_user" sequence="19" name="Teams"/>
 
     </data>
 </odoo>

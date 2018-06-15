@@ -9,7 +9,7 @@
             <field name="model">rwc.player</field>
             <field name="type">tree</field>
             <field name="arch" type="xml">
-                <tree string="Players" default_order="score_stored desc">
+                <tree string="Players" default_order="score_stored desc" create="false" delete="false">
                     <field name="name"/>
                     <field name="user_id"/>
                     <field name="score" invisible="1"/>
@@ -25,7 +25,7 @@
             <field name="model">rwc.player</field>
             <field name="type">form</field>
             <field name="arch" type="xml">
-                <form string="Players">
+                <form string="Players" create="false" delete="false">
                     <sheet>
                         <field name="avatar" widget="image" class="oe_avatar" options="{&quot;size&quot;: [90, 90]}"/>
                         <div class="oe_title">
@@ -73,7 +73,7 @@
                                                 <field name="match_id" placeholder="Choose the match..."/>
                                             </div>
                                         </div>
-                                        <group string="Score" style="text-align: center;">
+                                        <group string="Bet score" style="text-align: center;">
                                             <h3>
                                                 <field name="flag_home" widget="image" class="oe_inline" options="{&quot;size&quot;: [45, 31]}" style="margin-right: 2%%; top: 14px;"/>
                                                 <field name="team_home" class="oe_inline" style="margin-right: 5%%;"/> <field name="score_home" style="width:5%%;"/> 
@@ -152,7 +152,7 @@
                                 <field name="match_id" placeholder="Choose the match..."/>
                             </div>
                         </div>
-                        <group string="Score" style="text-align: center;">
+                        <group string="Bet score" style="text-align: center;">
                             <h3>
                                 <field name="flag_home" widget="image" class="oe_inline" options="{&quot;size&quot;: [45, 31]}" style="margin-right: 2%%; top: 14px;"/>
                                 <field name="team_home" class="oe_inline" style="margin-right: 5%%;"/> <field name="score_home" style="width:5%%;"/> 
@@ -187,7 +187,7 @@
 
         <!-- TEAM VIEWS AND ACTIONS -->
 
-        <!-- <record id="view_rwc_team_tree" model="ir.ui.view">
+        <record id="view_rwc_team_tree" model="ir.ui.view">
             <field name="name">rwc.team.tree</field>
             <field name="model">rwc.team</field>
             <field name="type">tree</field>
@@ -205,12 +205,15 @@
             <field name="arch" type="xml">
                 <form string="Teams">
                     <sheet>
-                        <field name="flag" widget="image" class="oe_avatar" options="{&quot;size&quot;: [90, 63]}"/>
-                        <div class="oe_title">
+                        <group style="text-align: center;">
+                            <field name="flag" widget="image" options="{&quot;size&quot;: [90, 63]}" nolabel="1" class="oe_inline"/>
+                        </group>
+                        <br/>
+                        <group style="text-align: center;">
                             <h1>
                                 <field name="name"/>
                             </h1>
-                        </div>
+                        </group>
                     </sheet>
                 </form>
             </field>
@@ -223,12 +226,12 @@
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="target">current</field>
-        </record> -->
+        </record>
 
 
         <!-- MATCH VIEWS AND ACTIONS -->
 
-        <!-- <record id="view_rwc_match_tree" model="ir.ui.view">
+        <record id="view_rwc_match_tree" model="ir.ui.view">
             <field name="name">rwc.match.tree</field>
             <field name="model">rwc.match</field>
             <field name="type">tree</field>
@@ -249,8 +252,9 @@
             <field name="arch" type="xml">
                 <form string="Matches">
                     <header>
-                        <button name="set_as_finished" type="object" string="Finish" class="oe_highlight" states="to_play"/>
-                        <button name="set_as_to_play" type="object" string="To play" states="finished"/>
+                        <button name="add_your_bet" type="object" string="Bet!" class="oe_highlight" states="to_play"/>
+                        <button name="set_as_finished" type="object" string="Finish" class="oe_highlight" states="to_play" groups="anb_russia_2018_sweepstake.sweepstake_admin_group_user"/>
+                        <button name="set_as_to_play" type="object" string="To play" states="finished" groups="anb_russia_2018_sweepstake.sweepstake_admin_group_user"/>
                         <field name="state" widget="statusbar" nolabel="1" statusbar_visible="to_play,finished"/>
                     </header>
                     <sheet>
@@ -301,7 +305,7 @@
                                                 <field name="match_id" placeholder="Choose the match..."/>
                                             </div>
                                         </div>
-                                        <group string="Score" style="text-align: center;">
+                                        <group string="Bet Score" style="text-align: center;">
                                             <h3>
                                                 <field name="flag_home" widget="image" class="oe_inline" options="{&quot;size&quot;: [45, 31]}" style="margin-right: 2%%; top: 14px;"/>
                                                 <field name="team_home" class="oe_inline" style="margin-right: 5%%;"/> <field name="score_home" style="width:5%%;"/> 
@@ -336,17 +340,15 @@
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="target">current</field>
-        </record> -->
+        </record>
 
 
         <!-- MENUS -->
 
-        <menuitem id="menu_rwc_sweepstake" parent="anb_russia_2018_sweepstake.menu_rwc" groups="sweepstake_player_group_user" sequence="16" name="Sweepstake"/>
-            <!-- <menuitem action="action_rwc_open_my_bet" id="menu_rwc_my_bet" parent="anb_russia_2018_sweepstake.menu_rwc_sweepstake" groups="sweepstake_player_group_user" sequence="16" name="My bets"/> -->
-            <menuitem action="action_rwc_open_bet" id="menu_rwc_bet" parent="anb_russia_2018_sweepstake.menu_rwc_sweepstake" groups="sweepstake_player_group_user" sequence="17" name="Bets"/>
-            <menuitem action="action_rwc_open_player" id="menu_rwc_player" parent="anb_russia_2018_sweepstake.menu_rwc_sweepstake" groups="sweepstake_player_group_user" sequence="18" name="Ranking"/>
-            <!--<menuitem action="action_rwc_open_team" id="menu_rwc_team" parent="anb_russia_2018_sweepstake.menu_rwc_sweepstake" groups="sweepstake_player_group_user" sequence="18" name="Teams"/>
-            <menuitem action="action_rwc_open_match" id="menu_rwc_match" parent="anb_russia_2018_sweepstake.menu_rwc_sweepstake" groups="sweepstake_player_group_user" sequence="19" name="Matches"/> -->
-
+        <menuitem id="menu_rwc_sweepstake" parent="anb_russia_2018_sweepstake.menu_rwc" groups="anb_russia_2018_sweepstake.sweepstake_player_group_user" sequence="16" name="Sweepstake"/>
+            <menuitem action="action_rwc_open_match" id="menu_rwc_match" parent="anb_russia_2018_sweepstake.menu_rwc_sweepstake" groups="anb_russia_2018_sweepstake.sweepstake_player_group_user" sequence="16" name="Matches"/>
+            <menuitem action="action_rwc_open_bet" id="menu_rwc_bet" parent="anb_russia_2018_sweepstake.menu_rwc_sweepstake" groups="anb_russia_2018_sweepstake.sweepstake_player_group_user" sequence="17" name="Bets"/>
+            <menuitem action="action_rwc_open_player" id="menu_rwc_player" parent="anb_russia_2018_sweepstake.menu_rwc_sweepstake" groups="anb_russia_2018_sweepstake.sweepstake_player_group_user" sequence="18" name="Ranking"/>
+            <menuitem action="action_rwc_open_team" id="menu_rwc_team" parent="anb_russia_2018_sweepstake.menu_rwc_sweepstake" groups="anb_russia_2018_sweepstake.sweepstake_player_group_user" sequence="19" name="Teams"/>
     </data>
 </odoo>

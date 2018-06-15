@@ -69,6 +69,11 @@ class RWCPlayer(models.Model):
         readonly=True,
     )
 
+    _sql_constraints = [
+        ('user_uniq', 'unique(user_id)',
+         _('A user cannot have more than one participant.')),
+    ]    
+
 
 class RWCBet(models.Model):
     _name = 'rwc.bet'
@@ -224,14 +229,15 @@ class RWCBet(models.Model):
             not self.env.user.has_group(
                 'anb_russia_2018_sweepstake.sweepstake_admin_group_user'):
             raise Warning(
-                _('Bets forbidden after the beginning of the match.'),
+                _('Too late to bet! Bets are forbidden after the beginning of '
+                  'the match.'),
             )
 
     @api.multi
     def write(self, vals):
         for bet in self:
             if 'match_id' in vals or 'player_id' in vals or \
-               'score_home' in vals or 'score_away' in vals:
+              'score_home' in vals or 'score_away' in vals:
                 write_date = fields.Datetime.from_string(fields.Datetime.now())
                 date = fields.Datetime.from_string(bet.match_id.date)
                 if write_date > date and \
@@ -247,8 +253,8 @@ class RWCBet(models.Model):
                        ('score_away' in vals and
                        bet.score_away != vals.get('score_away', False)):
                         raise Warning(
-                            _('Bets forbidden after the beginning of the '
-                              'match.'),
+                            _('Too late to bet! Bets forbidden after the '
+                              'beginning of the match.'),
                         )
         res = super(RWCBet, self).write(vals)
         for bet in self:
@@ -395,6 +401,50 @@ class RWCMatch(models.Model):
             for bet in match.bet_ids:
                 bet.player_id.score_stored = bet.player_id.score
         return res
+
+    @api.multi
+    def add_your_bet(self):
+        self.ensure_one()
+        player = self.env['rwc.player'].search([
+            ('user_id', '=', self.env.user.id),
+        ])
+        if len(player) == 0:
+            raise Warning(
+                _('First, create a participant for your user. Ask the game '
+                  'manager for that if you do not have permissions to create '
+                  'any participants.')
+            )
+        player.ensure_one()
+        action = self.env.ref('anb_russia_2018_sweepstake.action_rwc_open_bet')
+        action_dict = action.read()[0]
+        action_dict.update({
+            'view_mode': 'form',
+            'views': [(False, u'form')],
+            'context': {
+                'default_match_id': self.id,
+                'default_player_id': player.id,
+            }
+        })
+        bet = self.env['rwc.bet'].search([
+            ('match_id', '=', self.id),
+            ('player_id', '=', player.id),
+        ])
+        if bet and bet.ensure_one():
+            action_dict.update({
+                'res_id': bet.id,
+            })
+        else:
+            write_date = fields.Datetime.from_string(fields.Datetime.now())
+            date = fields.Datetime.from_string(self.date)
+            if write_date > date and \
+                not self.env.user.has_group(
+                    'anb_russia_2018_sweepstake.'
+                    'sweepstake_admin_group_user'):
+                raise Warning(
+                    _('Too late to bet! Bets are forbidden after the '
+                      'beginning of the match.'),
+                )
+        return action_dict
 
 
 class RWCTeam(models.Model):
