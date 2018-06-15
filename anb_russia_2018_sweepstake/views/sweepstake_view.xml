@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- PLAYER VIEWS AND ACTIONS -->
+
+        <record id="view_rwc_player_tree" model="ir.ui.view">
+            <field name="name">rwc.player.tree</field>
+            <field name="model">rwc.player</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Players" default_order="score_stored desc">
+                    <field name="name"/>
+                    <field name="user_id"/>
+                    <field name="score" invisible="1"/>
+                    <field name="score_stored"/>
+                    <field name="full_hits"/>
+                    <field name="hits"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_rwc_player_form" model="ir.ui.view">
+            <field name="name">rwc.player.form</field>
+            <field name="model">rwc.player</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Players">
+                    <sheet>
+                        <field name="avatar" widget="image" class="oe_avatar" options="{&quot;size&quot;: [90, 90]}"/>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" default_focus="1" placeholder="Alias"/>
+                            </h1>
+                            <div class="o_row">
+                                <field name="user_id" placeholder="Choose an Odoo user (not required)..." readonly="1"/>
+                            </div>
+                            <br/>
+                            <div class="o_row">
+                                <label for="score" invisible="1"/>
+                                <field name="score" invisible="1"/>
+                                <label for="score_stored"/>
+                                <field name="score_stored"/>
+                                <label for="full_hits"/>
+                                <field name="full_hits"/>
+                                <label for="hits"/>
+                                <field name="hits"/>
+                            </div>
+                        </div>
+                        <group string="Bets">
+                            <field name="bet_ids" nolabel="1" widget="one2many_list" context="{'default_player_id': active_id}">
+                                <tree string="Bets" colors="blue:state=='to_play'" create="false" edit="false" delete="false" domain="[('state', '=', 'finished')]">
+                                    <field name="date"/>
+                                    <field name="player_id" invisible="1"/>
+                                    <field name="match_id" invisible="1"/>
+                                    <field name="display_name" string="Bet"/>
+                                    <field name="hit"/>
+                                    <field name="full_hit"/>
+                                    <field name="state"/>
+                                </tree>
+                                <form string="Bets" create="false" edit="false" delete="false">
+                                    <sheet>
+                                        <div class="oe_title">
+                                            <h1>
+                                                <field name="display_name" string="Bet"/>
+                                            </h1>
+                                            <label for="player_id" invisible="1" />
+                                            <div class="o_row" invisible="1">
+                                                <field name="player_id" placeholder="Choose the player..."/>
+                                            </div>
+                                            <label for="match_id"/>
+                                            <div class="o_row">
+                                                <field name="match_id" placeholder="Choose the match..."/>
+                                            </div>
+                                        </div>
+                                        <group string="Score" style="text-align: center;">
+                                            <h3>
+                                                <field name="flag_home" widget="image" class="oe_inline" options="{&quot;size&quot;: [45, 31]}" style="margin-right: 2%%; top: 14px;"/>
+                                                <field name="team_home" class="oe_inline" style="margin-right: 5%%;"/> <field name="score_home" style="width:5%%;"/> 
+                                                <field name="score_away" style="width:5%%;"/> <field name="team_away" class="oe_inline"/> 
+                                                <field name="flag_away" widget="image" class="oe_inline" options="{&quot;size&quot;: [45, 31]}" style="margin-left: 2%%; top: 14px;"/>
+                                            </h3>
+                                        </group>
+                                        <group string="Bet data">
+                                            <group>
+                                                <field name="date"/>
+                                                <field name="quiniela"/>
+                                            </group>
+                                            <group>
+                                                <field name="hit"/>
+                                                <field name="full_hit"/>
+                                                <field name="state"/>
+                                            </group>
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_rwc_open_player" model="ir.actions.act_window">
+            <field name="name">Ranking</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">rwc.player</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="target">current</field>
+        </record>
+
+
+        <!-- BET VIEWS AND ACTIONS -->
+
+        <record id="view_rwc_bet_tree" model="ir.ui.view">
+            <field name="name">rwc.bet.tree</field>
+            <field name="model">rwc.bet</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Bets" colors="blue:state=='to_play'">
+                    <field name="date"/>
+                    <field name="player_id"/>
+                    <field name="display_name" string="Bet"/>
+                    <field name="hit"/>
+                    <field name="full_hit"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_rwc_bet_form" model="ir.ui.view">
+            <field name="name">rwc.bet.form</field>
+            <field name="model">rwc.bet</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Bets">
+                    <header>
+                        <field name="state" widget="statusbar" nolabel="1" statusbar_visible="to_play,finished"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="display_name" string="Bet"/>
+                            </h1>
+                            <label for="player_id" invisible="1"/>
+                            <div class="o_row" invisible="1">
+                                <field name="player_id" placeholder="Choose the player..."/>
+                            </div>
+                            <label for="match_id"/>
+                            <div class="o_row">
+                                <field name="match_id" placeholder="Choose the match..."/>
+                            </div>
+                        </div>
+                        <group string="Score" style="text-align: center;">
+                            <h3>
+                                <field name="flag_home" widget="image" class="oe_inline" options="{&quot;size&quot;: [45, 31]}" style="margin-right: 2%%; top: 14px;"/>
+                                <field name="team_home" class="oe_inline" style="margin-right: 5%%;"/> <field name="score_home" style="width:5%%;"/> 
+                                <field name="score_away" style="width:5%%;"/> <field name="team_away" class="oe_inline"/> 
+                                <field name="flag_away" widget="image" class="oe_inline" options="{&quot;size&quot;: [45, 31]}" style="margin-left: 2%%; top: 14px;"/>
+                            </h3>
+                        </group>
+                        <group string="Bet data">
+                            <group>
+                                <field name="date"/>
+                                <field name="quiniela"/>
+                            </group>
+                            <group>
+                                <field name="hit"/>
+                                <field name="full_hit"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_rwc_open_bet" model="ir.actions.act_window">
+            <field name="name">Bets</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">rwc.bet</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="target">current</field>
+        </record>
+
+
+        <!-- TEAM VIEWS AND ACTIONS -->
+
+        <!-- <record id="view_rwc_team_tree" model="ir.ui.view">
+            <field name="name">rwc.team.tree</field>
+            <field name="model">rwc.team</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Teams">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_rwc_team_form" model="ir.ui.view">
+            <field name="name">rwc.team.form</field>
+            <field name="model">rwc.team</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Teams">
+                    <sheet>
+                        <field name="flag" widget="image" class="oe_avatar" options="{&quot;size&quot;: [90, 63]}"/>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_rwc_open_team" model="ir.actions.act_window">
+            <field name="name">Teams</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">rwc.team</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="target">current</field>
+        </record> -->
+
+
+        <!-- MATCH VIEWS AND ACTIONS -->
+
+        <!-- <record id="view_rwc_match_tree" model="ir.ui.view">
+            <field name="name">rwc.match.tree</field>
+            <field name="model">rwc.match</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Matches" colors="blue:state=='to_play'">
+                    <field name="date"/>
+                    <field name="display_name" string="Match"/>
+                    <field name="quiniela"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_rwc_match_form" model="ir.ui.view">
+            <field name="name">rwc.match.form</field>
+            <field name="model">rwc.match</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Matches">
+                    <header>
+                        <button name="set_as_finished" type="object" string="Finish" class="oe_highlight" states="to_play"/>
+                        <button name="set_as_to_play" type="object" string="To play" states="finished"/>
+                        <field name="state" widget="statusbar" nolabel="1" statusbar_visible="to_play,finished"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="display_name" string="Match"/>
+                            </h1>
+                        </div>
+                        <group string="Score" style="text-align: center;">
+                            <h3>
+                                <field name="flag_home" widget="image" class="oe_inline" options="{&quot;size&quot;: [45, 31]}" style="margin-right: 2%%; top: 14px;"/>
+                                <field name="team_home" class="oe_inline" style="margin-right: 5%%;"/> <field name="score_home" style="width:5%%;"/> 
+                                <field name="score_away" style="width:5%%;"/> <field name="team_away" class="oe_inline"/> 
+                                <field name="flag_away" widget="image" class="oe_inline" options="{&quot;size&quot;: [45, 31]}" style="margin-left: 2%%; top: 14px;"/>
+                            </h3>
+                        </group>
+                        <group string="Match data">
+                            <group>
+                                <field name="date"/>
+                            </group>
+                            <group>
+                                <field name="quiniela"/>
+                            </group>
+                        </group>
+                        <group string="Bets">
+                            <field name="bet_ids" nolabel="1" widget="one2many_list" context="{'default_match_id': active_id}">
+                                <tree string="Bets" colors="blue:state=='to_play'">
+                                    <field name="date"/>
+                                    <field name="player_id" invisible="1"/>
+                                    <field name="match_id" invisible="1"/>
+                                    <field name="display_name" string="Bet"/>
+                                    <field name="hit"/>
+                                    <field name="full_hit"/>
+                                    <field name="state"/>
+                                </tree>
+                                <form string="Bets">
+                                    <sheet>
+                                        <div class="oe_title">
+                                            <h1>
+                                                <field name="display_name" string="Bet"/>
+                                            </h1>
+                                            <label for="player_id" />
+                                            <div class="o_row">
+                                                <field name="player_id" placeholder="Choose the player..."/>
+                                            </div>
+                                            <label for="match_id" invisible="1"/>
+                                            <div class="o_row" invisible="1">
+                                                <field name="match_id" placeholder="Choose the match..."/>
+                                            </div>
+                                        </div>
+                                        <group string="Score" style="text-align: center;">
+                                            <h3>
+                                                <field name="flag_home" widget="image" class="oe_inline" options="{&quot;size&quot;: [45, 31]}" style="margin-right: 2%%; top: 14px;"/>
+                                                <field name="team_home" class="oe_inline" style="margin-right: 5%%;"/> <field name="score_home" style="width:5%%;"/> 
+                                                <field name="score_away" style="width:5%%;"/> <field name="team_away" class="oe_inline"/> 
+                                                <field name="flag_away" widget="image" class="oe_inline" options="{&quot;size&quot;: [45, 31]}" style="margin-left: 2%%; top: 14px;"/>
+                                            </h3>
+                                        </group>
+                                        <group string="Bet data">
+                                            <group>
+                                                <field name="date"/>
+                                                <field name="quiniela"/>
+                                            </group>
+                                            <group>
+                                                <field name="hit"/>
+                                                <field name="full_hit"/>
+                                                <field name="state"/>
+                                            </group>
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_rwc_open_match" model="ir.actions.act_window">
+            <field name="name">Matches</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">rwc.match</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="target">current</field>
+        </record> -->
+
+
+        <!-- MENUS -->
+
+        <menuitem id="menu_rwc_sweepstake" parent="anb_russia_2018_sweepstake.menu_rwc" groups="sweepstake_player_group_user" sequence="16" name="Sweepstake"/>
+            <!-- <menuitem action="action_rwc_open_my_bet" id="menu_rwc_my_bet" parent="anb_russia_2018_sweepstake.menu_rwc_sweepstake" groups="sweepstake_player_group_user" sequence="16" name="My bets"/> -->
+            <menuitem action="action_rwc_open_bet" id="menu_rwc_bet" parent="anb_russia_2018_sweepstake.menu_rwc_sweepstake" groups="sweepstake_player_group_user" sequence="17" name="Bets"/>
+            <menuitem action="action_rwc_open_player" id="menu_rwc_player" parent="anb_russia_2018_sweepstake.menu_rwc_sweepstake" groups="sweepstake_player_group_user" sequence="18" name="Ranking"/>
+            <!--<menuitem action="action_rwc_open_team" id="menu_rwc_team" parent="anb_russia_2018_sweepstake.menu_rwc_sweepstake" groups="sweepstake_player_group_user" sequence="18" name="Teams"/>
+            <menuitem action="action_rwc_open_match" id="menu_rwc_match" parent="anb_russia_2018_sweepstake.menu_rwc_sweepstake" groups="sweepstake_player_group_user" sequence="19" name="Matches"/> -->
+
+    </data>
+</odoo>

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <record id="match_ru_sa" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.ru_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.sa_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-14 15:00', '%Y-%m-%d %H:%M')"/>
+        </record>
+        <record id="match_eg_ur" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.eg_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.uy_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-15 12:00', '%Y-%m-%d %H:%M')"/>
+        </record>
+        <record id="match_mo_ir" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.ma_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.ir_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-15 15:00', '%Y-%m-%d %H:%M')"/>
+        </record>
+        <record id="match_pt_es" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.pt_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.es_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-15 18:00', '%Y-%m-%d %H:%M')"/>
+        </record>
+        <record id="match_fr_au" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.fr_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.au_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-16 10:00', '%Y-%m-%d %H:%M')"/>
+        </record>
+        <record id="match_ar_is" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.ar_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.is_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-16 13:00', '%Y-%m-%d %H:%M')"/>
+        </record>
+        <record id="match_pe_dk" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.pe_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.dk_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-16 16:00', '%Y-%m-%d %H:%M')"/>
+        </record>
+        <record id="match_cr_rs" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.cr_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.rs_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-17 12:00', '%Y-%m-%d %H:%M')"/>
+        </record>
+        <record id="match_de_mx" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.de_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.mx_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-17 15:00', '%Y-%m-%d %H:%M')"/>
+        </record>
+        <record id="match_br_ch" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.br_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.ch_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-17 18:00', '%Y-%m-%d %H:%M')"/>
+        </record>
+        <record id="match_se_sk" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.se_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.kr_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-18 12:00', '%Y-%m-%d %H:%M')"/>
+        </record>
+        <record id="match_be_pa" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.be_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.pa_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-18 15:00', '%Y-%m-%d %H:%M')"/>
+        </record>
+        <record id="match_tn_en" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.tn_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.en_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-18 18:00', '%Y-%m-%d %H:%M')"/>
+        </record>
+        <record id="match_co_jp" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.co_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.jp_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-19 12:00', '%Y-%m-%d %H:%M')"/>
+        </record>
+        <record id="match_pl_sn" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.pl_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.se_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-19 15:00', '%Y-%m-%d %H:%M')"/>
+        </record>
+        <record id="match_ru_eg" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.ru_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.eg_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-19 18:00', '%Y-%m-%d %H:%M')"/>
+        </record>
+
+        <!-- <record id="ar_team" model="rwc.team">
+            <field name="name">Argentina</field>
+            <field file="base/static/img/country_flags/ar.png" name="flag" type="base64" />
+        </record>
+        <record id="au_team" model="rwc.team">
+            <field name="name">Australia</field>
+            <field file="base/static/img/country_flags/au.png" name="flag" type="base64" />
+        </record>
+        <record id="be_team" model="rwc.team">
+            <field name="name">Belgium</field>
+            <field file="base/static/img/country_flags/be.png" name="flag" type="base64" />
+        </record>
+        <record id="br_team" model="rwc.team">
+            <field name="name">Brazil</field>
+            <field file="base/static/img/country_flags/br.png" name="flag" type="base64" />
+        </record>
+        <record id="co_team" model="rwc.team">
+            <field name="name">Colombia</field>
+            <field file="base/static/img/country_flags/co.png" name="flag" type="base64" />
+        </record>
+        <record id="cr_team" model="rwc.team">
+            <field name="name">Costa Rica</field>
+            <field file="base/static/img/country_flags/cr.png" name="flag" type="base64" />
+        </record>
+        <record id="hr_team" model="rwc.team">
+            <field name="name">Croatia</field>
+            <field file="base/static/img/country_flags/hr.png" name="flag" type="base64" />
+        </record>
+        <record id="dk_team" model="rwc.team">
+            <field name="name">Denmark</field>
+            <field file="base/static/img/country_flags/dk.png" name="flag" type="base64" />
+        </record>
+        <record id="eg_team" model="rwc.team">
+            <field name="name">Egypt</field>
+            <field file="base/static/img/country_flags/eg.png" name="flag" type="base64" />
+        </record>
+        <record id="en_team" model="rwc.team">
+            <field name="name">England</field>
+            <field file="anb_russia_2018_sweepstake/static/description/flags/england-flag.png" name="flag" type="base64" />
+        </record>
+        <record id="fr_team" model="rwc.team">
+            <field name="name">France</field>
+            <field file="base/static/img/country_flags/fr.png" name="flag" type="base64" />
+        </record>
+        <record id="de_team" model="rwc.team">
+            <field name="name">Germany</field>
+            <field file="base/static/img/country_flags/de.png" name="flag" type="base64" />
+        </record>
+        <record id="is_team" model="rwc.team">
+            <field name="name">Iceland</field>
+            <field file="base/static/img/country_flags/is.png" name="flag" type="base64" />
+        </record>
+        <record id="ir_team" model="rwc.team">
+            <field name="name">Iran</field>
+            <field file="base/static/img/country_flags/ir.png" name="flag" type="base64" />
+        </record>
+        <record id="jp_team" model="rwc.team">
+            <field name="name">Japan</field>
+            <field file="base/static/img/country_flags/jp.png" name="flag" type="base64" />
+        </record>
+        <record id="kr_team" model="rwc.team">
+            <field name="name">South Korea</field>
+            <field file="base/static/img/country_flags/kr.png" name="flag" type="base64" />
+        </record>
+        <record id="mx_team" model="rwc.team">
+            <field name="name">Mexico</field>
+            <field file="base/static/img/country_flags/mx.png" name="flag" type="base64" />
+        </record>
+        <record id="ma_team" model="rwc.team">
+            <field name="name">Morocco</field>
+            <field file="base/static/img/country_flags/ma.png" name="flag" type="base64" />
+        </record>
+        <record id="ng_team" model="rwc.team">
+            <field name="name">Nigeria</field>
+            <field file="base/static/img/country_flags/ng.png" name="flag" type="base64" />
+        </record>
+        <record id="pa_team" model="rwc.team">
+            <field name="name">Panama</field>
+            <field file="base/static/img/country_flags/pa.png" name="flag" type="base64" />
+        </record>
+        <record id="pe_team" model="rwc.team">
+            <field name="name">Peru</field>
+            <field file="base/static/img/country_flags/pe.png" name="flag" type="base64" />
+        </record>
+        <record id="pl_team" model="rwc.team">
+            <field name="name">Poland</field>
+            <field file="base/static/img/country_flags/pl.png" name="flag" type="base64" />
+        </record>
+        <record id="pt_team" model="rwc.team">
+            <field name="name">Portugal</field>
+            <field file="base/static/img/country_flags/pt.png" name="flag" type="base64" />
+        </record>
+        <record id="ru_team" model="rwc.team">
+            <field name="name">Russia</field>
+            <field file="base/static/img/country_flags/ru.png" name="flag" type="base64" />
+        </record>
+        <record id="sa_team" model="rwc.team">
+            <field name="name">Saudi Arabia</field>
+            <field file="base/static/img/country_flags/sa.png" name="flag" type="base64" />
+        </record>
+        <record id="sn_team" model="rwc.team">
+            <field name="name">Senegal</field>
+            <field file="base/static/img/country_flags/sn.png" name="flag" type="base64" />
+        </record>
+        <record id="rs_team" model="rwc.team">
+            <field name="name">Serbia</field>
+            <field file="base/static/img/country_flags/rs.png" name="flag" type="base64" />
+        </record>
+        <record id="es_team" model="rwc.team">
+            <field name="name">Spain</field>
+            <field file="base/static/img/country_flags/es.png" name="flag" type="base64" />
+        </record>
+        <record id="se_team" model="rwc.team">
+            <field name="name">Sweden</field>
+            <field file="base/static/img/country_flags/se.png" name="flag" type="base64" />
+        </record>
+        <record id="ch_team" model="rwc.team">
+            <field name="name">Switzerland</field>
+            <field file="base/static/img/country_flags/ch.png" name="flag" type="base64" />
+        </record>
+        <record id="tn_team" model="rwc.team">
+            <field name="name">Tunisia</field>
+            <field file="base/static/img/country_flags/tn.png" name="flag" type="base64" />
+        </record>
+        <record id="uy_team" model="rwc.team">
+            <field name="name">Uruguay</field>
+            <field file="base/static/img/country_flags/uy.png" name="flag" type="base64" />
+        </record> -->
+
+    </data>
+</odoo>
