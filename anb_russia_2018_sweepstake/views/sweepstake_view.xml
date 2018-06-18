@@ -258,6 +258,8 @@
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="target">current</field>
+            <field name="context">{"search_default_to_play": 1, "search_default_my_bets": 1,}</field>
+            <field name="search_view_id" ref="view_rwc_bet_search"/>
         </record>
 
 
@@ -417,8 +419,6 @@
             <field name="view_type">form</field>
             <field name="view_mode">kanban,tree,form</field>
             <field name="target">current</field>
-            <field name="context">{"search_default_to_play": 1, "search_default_my_bets": 1,}</field>
-            <field name="search_view_id" ref="view_rwc_bet_search"/>
         </record>
 
 

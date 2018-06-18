@@ -44,6 +44,12 @@
             <field name="date" eval="DateTime.strptime('2018-06-16 16:00', '%Y-%m-%d %H:%M')"/>
             <field name="match_round" eval="'group_phase'"/>
         </record>
+        <record id="match_hr_ng" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.hr_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.ng_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-16 19:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
         <record id="match_cr_rs" model="rwc.match">
             <field name="team_home" ref="anb_russia_2018_sweepstake.cr_team"/>
             <field name="team_away" ref="anb_russia_2018_sweepstake.rs_team"/>
@@ -88,7 +94,7 @@
         </record>
         <record id="match_pl_sn" model="rwc.match">
             <field name="team_home" ref="anb_russia_2018_sweepstake.pl_team"/>
-            <field name="team_away" ref="anb_russia_2018_sweepstake.se_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.sn_team"/>
             <field name="date" eval="DateTime.strptime('2018-06-19 15:00', '%Y-%m-%d %H:%M')"/>
             <field name="match_round" eval="'group_phase'"/>
         </record>
@@ -101,7 +107,7 @@
         <record id="match_pt_ma" model="rwc.match">
             <field name="team_home" ref="anb_russia_2018_sweepstake.pt_team"/>
             <field name="team_away" ref="anb_russia_2018_sweepstake.ma_team"/>
-            <field name="date" eval="DateTime.strptime('2018-06-20 16:00', '%Y-%m-%d %H:%M')"/>
+            <field name="date" eval="DateTime.strptime('2018-06-20 12:00', '%Y-%m-%d %H:%M')"/>
             <field name="match_round" eval="'group_phase'"/>
         </record>
         <record id="match_uy_sa" model="rwc.match">
@@ -161,7 +167,7 @@
         <record id="match_kr_mx" model="rwc.match">
             <field name="team_home" ref="anb_russia_2018_sweepstake.kr_team"/>
             <field name="team_away" ref="anb_russia_2018_sweepstake.mx_team"/>
-            <field name="date" eval="DateTime.strptime('2018-06-23 16:00', '%Y-%m-%d %H:%M')"/>
+            <field name="date" eval="DateTime.strptime('2018-06-23 15:00', '%Y-%m-%d %H:%M')"/>
             <field name="match_round" eval="'group_phase'"/>
         </record>
         <record id="match_de_se" model="rwc.match">
