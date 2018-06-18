@@ -2,276 +2,88 @@
 <odoo>
     <data>
 
-        <!-- PLAYER VIEWS AND ACTIONS -->
-
-        <record id="view_admin_rwc_player_tree" model="ir.ui.view">
-            <field name="name">rwc.player.tree</field>
-            <field name="model">rwc.player</field>
-            <field name="priority" eval="18"/>
-            <field name="type">tree</field>
-            <field name="arch" type="xml">
-                <tree string="Players">
-                    <field name="name"/>
-                    <field name="user_id"/>
-                    <field name="score" invisible="1"/>
-                    <field name="score_stored"/>
-                    <field name="full_hits"/>
-                    <field name="hits"/>
-                </tree>
-            </field>
-        </record>
-
-        <record id="view_admin_rwc_player_form" model="ir.ui.view">
-            <field name="name">rwc.player.form</field>
-            <field name="model">rwc.player</field>
-            <field name="priority" eval="18"/>
-            <field name="type">form</field>
-            <field name="arch" type="xml">
-                <form string="Players">
-                    <sheet>
-                        <field name="avatar" widget="image" class="oe_avatar" options="{&quot;size&quot;: [90, 90]}"/>
-                        <div class="oe_title">
-                            <h1>
-                                <field name="name" default_focus="1" placeholder="Alias"/>
-                            </h1>
-                            <div class="o_row">
-                                <field name="user_id" placeholder="Choose an Odoo user (not required)..."/>
-                            </div>
-                            <br/>
-                            <div class="o_row">
-                                <label for="score" invisible="1"/>
-                                <field name="score" invisible="1"/>
-                                <label for="score_stored"/>
-                                <field name="score_stored"/> 
-                                <label for="full_hits"/>
-                                <field name="full_hits"/>
-                                <label for="hits"/>
-                                <field name="hits"/>
-                            </div>
-                        </div>
-                        <group string="Bets">
-                            <field name="bet_ids" nolabel="1" widget="one2many_list" context="{'default_player_id': active_id}">
-                                <tree string="Bets" colors="blue:state=='to_play'">
-                                    <field name="date"/>
-                                    <field name="player_id" invisible="1"/>
-                                    <field name="match_id" invisible="1"/>
-                                    <field name="display_name" string="Bet"/>
-                                    <field name="hit"/>
-                                    <field name="full_hit"/>
-                                    <field name="state"/>
-                                </tree>
-                                <form string="Bets">
-                                    <sheet>
-                                        <div class="oe_title">
-                                            <h1>
-                                                <field name="display_name" string="Bet"/>
-                                            </h1>
-                                            <label for="player_id" invisible="1" />
-                                            <div class="o_row" invisible="1">
-                                                <field name="player_id" placeholder="Choose the player..."/>
-                                            </div>
-                                            <label for="match_id"/>
-                                            <div class="o_row">
-                                                <field name="match_id" placeholder="Choose the match..."/>
-                                            </div>
-                                        </div>
-                                        <group string="Bet score" style="text-align: center;">
-                                            <h3>
-                                                <field name="flag_home" widget="image" class="oe_inline" options="{&quot;size&quot;: [45, 31]}" style="margin-right: 2%%; top: 14px;"/>
-                                                <field name="team_home" class="oe_inline" style="margin-right: 5%%;"/> <field name="score_home" style="width:5%%;"/> 
-                                                <field name="score_away" style="width:5%%;"/> <field name="team_away" class="oe_inline"/> 
-                                                <field name="flag_away" widget="image" class="oe_inline" options="{&quot;size&quot;: [45, 31]}" style="margin-left: 2%%; top: 14px;"/>
-                                            </h3>
-                                        </group>
-                                        <group string="Bet data">
-                                            <group>
-                                                <field name="date"/>
-                                                <field name="quiniela"/>
-                                            </group>
-                                            <group>
-                                                <field name="hit"/>
-                                                <field name="full_hit"/>
-                                                <field name="state"/>
-                                            </group>
-                                        </group>
-                                    </sheet>
-                                </form>
-                            </field>
-                        </group>
-                    </sheet>
-                </form>
-            </field>
-        </record>
-
-        <record id="action_admin_rwc_open_player" model="ir.actions.act_window">
-            <field name="name">Players</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">rwc.player</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
-            <field name="target">current</field>
-        </record>
-
-        <record id="action_admin_rwc_open_player_tree" model="ir.actions.act_window.view">
-            <field name="view_mode">tree</field>
-            <field name="view_id" ref="view_admin_rwc_player_tree"/>
-            <field name="act_window_id" ref="action_admin_rwc_open_player"/>
-        </record>
-
-        <record id="action_admin_rwc_open_player_form" model="ir.actions.act_window.view">
-            <field name="view_mode">form</field>
-            <field name="view_id" ref="view_admin_rwc_player_form"/>
-            <field name="act_window_id" ref="action_admin_rwc_open_player"/>
-        </record>
-
-
-        <!-- BET VIEWS AND ACTIONS -->
-
-        <record id="view_admin_rwc_bet_tree" model="ir.ui.view">
-            <field name="name">rwc.bet.tree</field>
-            <field name="model">rwc.bet</field>
-            <field name="priority" eval="18"/>
-            <field name="type">tree</field>
-            <field name="arch" type="xml">
-                <tree string="Bets" colors="blue:state=='to_play'">
-                    <field name="date"/>
-                    <field name="player_id"/>
-                    <field name="display_name" string="Bet"/>
-                    <field name="hit"/>
-                    <field name="full_hit"/>
-                    <field name="state"/>
-                </tree>
-            </field>
-        </record>
-
-        <record id="view_admin_rwc_bet_form" model="ir.ui.view">
-            <field name="name">rwc.bet.form</field>
-            <field name="model">rwc.bet</field>
-            <field name="priority" eval="18"/>
-            <field name="type">form</field>
-            <field name="arch" type="xml">
-                <form string="Bets">
-                    <header>
-                        <field name="state" widget="statusbar" nolabel="1" statusbar_visible="to_play,finished"/>
-                    </header>
-                    <sheet>
-                        <div class="oe_title">
-                            <h1>
-                                <field name="display_name" string="Bet"/>
-                            </h1>
-                            <label for="player_id"/>
-                            <div class="o_row">
-                                <field name="player_id" placeholder="Choose the player..."/>
-                            </div>
-                            <label for="match_id"/>
-                            <div class="o_row">
-                                <field name="match_id" placeholder="Choose the match..."/>
-                            </div>
-                        </div>
-                        <group string="Bet score" style="text-align: center;">
-                            <h3>
-                                <field name="flag_home" widget="image" class="oe_inline" options="{&quot;size&quot;: [45, 31]}" style="margin-right: 2%%; top: 14px;"/>
-                                <field name="team_home" class="oe_inline" style="margin-right: 5%%;"/> <field name="score_home" style="width:5%%;"/> 
-                                <field name="score_away" style="width:5%%;"/> <field name="team_away" class="oe_inline"/> 
-                                <field name="flag_away" widget="image" class="oe_inline" options="{&quot;size&quot;: [45, 31]}" style="margin-left: 2%%; top: 14px;"/>
-                            </h3>
-                        </group>
-                        <group string="Bet data">
-                            <group>
-                                <field name="date"/>
-                                <field name="quiniela"/>
-                            </group>
-                            <group>
-                                <field name="hit"/>
-                                <field name="full_hit"/>
-                            </group>
-                        </group>
-                    </sheet>
-                </form>
-            </field>
-        </record>
-
-        <record id="action_admin_rwc_open_bet" model="ir.actions.act_window">
-            <field name="name">Bets</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">rwc.bet</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
-            <field name="target">current</field>
-        </record>
-
-        <record id="action_admin_rwc_open_bet_tree" model="ir.actions.act_window.view">
-            <field name="view_mode">tree</field>
-            <field name="view_id" ref="view_admin_rwc_bet_tree"/>
-            <field name="act_window_id" ref="action_admin_rwc_open_bet"/>
-        </record>
-
-        <record id="action_admin_rwc_open_bet_form" model="ir.actions.act_window.view">
-            <field name="view_mode">form</field>
-            <field name="view_id" ref="view_admin_rwc_bet_form"/>
-            <field name="act_window_id" ref="action_admin_rwc_open_bet"/>
-        </record>
-
-
-        <!-- TEAM VIEWS AND ACTIONS -->
-
-        <record id="view_admin_rwc_team_tree" model="ir.ui.view">
-            <field name="name">rwc.team.tree</field>
-            <field name="model">rwc.team</field>
-            <field name="priority" eval="18"/>
-            <field name="type">tree</field>
-            <field name="arch" type="xml">
-                <tree string="Teams">
-                    <field name="name"/>
-                </tree>
-            </field>
-        </record>
-
-        <record id="view_admin_rwc_team_form" model="ir.ui.view">
-            <field name="name">rwc.team.form</field>
-            <field name="model">rwc.team</field>
-            <field name="priority" eval="18"/>
-            <field name="type">form</field>
-            <field name="arch" type="xml">
-                <form string="Teams">
-                    <sheet>
-                        <group style="text-align: center;">
-                            <field name="flag" widget="image" options="{&quot;size&quot;: [90, 63]}" nolabel="1" class="oe_inline"/>
-                        </group>
-                        <br/>
-                        <group style="text-align: center;">
-                            <h1>
-                                <field name="name"/>
-                            </h1>
-                        </group>
-                    </sheet>
-                </form>
-            </field>
-        </record>
-
-        <record id="action_admin_rwc_open_team" model="ir.actions.act_window">
-            <field name="name">Teams</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">rwc.team</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
-            <field name="target">current</field>
-        </record>
-
-        <record id="action_admin_rwc_open_team_tree" model="ir.actions.act_window.view">
-            <field name="view_mode">tree</field>
-            <field name="view_id" ref="view_admin_rwc_team_tree"/>
-            <field name="act_window_id" ref="action_admin_rwc_open_team"/>
-        </record>
-
-        <record id="action_admin_rwc_open_team_form" model="ir.actions.act_window.view">
-            <field name="view_mode">form</field>
-            <field name="view_id" ref="view_admin_rwc_team_form"/>
-            <field name="act_window_id" ref="action_admin_rwc_open_team"/>
-        </record>
-
-
         <!-- MATCH VIEWS AND ACTIONS -->
+
+        <record id="view_rwc_match_search" model="ir.ui.view">
+            <field name="name">rwc.match.search</field>
+            <field name="model">rwc.match</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search>
+                   <field name="display_name" filter_domain="['|',('team_home','ilike',self),('team_away','ilike',self)]"/>
+                   <separator/>
+                   <filter string="To play" name="to_play" domain="[('state','=','to_play')]"/>
+                   <filter string="Finished" name="finished" domain="[('state','=','finished')]"/>
+                   <separator/>
+               </search>
+            </field>
+        </record>
+
+        <record id="view_admin_rwc_match_kanban" model="ir.ui.view">
+            <field name="name">rwc.match.kanban</field>
+            <field name="model">rwc.match</field>
+            <field name="priority" eval="18"/>
+            <field name="type">kanban</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="display_name"/>
+                    <field name="flag_home"/>
+                    <field name="flag_away"/>
+                    <field name="match_round"/>
+                    <field name="date"/>
+                    <field name="state"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="match-state finished" title="Finished" t-if="record.state.raw_value=='finished'"/>
+                                <div class="match-state to-play" title="To play" t-if="record.state.raw_value!='finished'"/>
+                                <div class="o_kanban_card_header">
+                                    <div class="match-round o_kanban_card_header_title">
+                                        <field name="match_round"/>: <field name="date"/>
+                                    </div>
+                                    <div class="oe_kanban_details" t-if="record.state.raw_value=='finished'">
+                                        <div class="home-flag pull-left">
+                                            <img t-att-src="kanban_image('rwc.match', 'flag_home', record.id.value)" width="45" height="31" class="oe_kanban_avatar"/>
+                                        </div>
+                                        <div class="home-team pull-left">
+                                            <field name="team_home"/>
+                                        </div>
+                                        <div class="home-score pull-left">
+                                            <span t-if="record.state.raw_value=='finished'">
+                                                <field name="score_home"/>
+                                            </span>
+                                        </div>
+                                        <div class="away-score pull-left">
+                                            <span t-if="record.state.raw_value=='finished'">
+                                                <field name="score_away"/>
+                                            </span>
+                                        </div>
+                                        <div class="away-team pull-left">
+                                            <field name="team_away"/>
+                                        </div>
+                                        <div class="away-flag pull-left">
+                                            <img t-att-src="kanban_image('rwc.match', 'flag_away', record.id.value)" width="45" height="31" class="oe_kanban_avatar"/>
+                                        </div>
+                                    </div>
+                                    <div class="oe_kanban_details" t-if="record.state.raw_value!='finished'">
+                                        <div class="home-flag pull-left">
+                                            <img t-att-src="kanban_image('rwc.match', 'flag_home', record.id.value)" width="45" height="31" class="oe_kanban_avatar"/>
+                                        </div>
+                                        <div class="match-display-name pull-left">
+                                            <field name="display_name"/>
+                                        </div>
+                                        <div class="away-flag pull-left">
+                                            <img t-att-src="kanban_image('rwc.match', 'flag_away', record.id.value)" width="45" height="31" class="oe_kanban_avatar"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="oe_clear"/>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
 
         <record id="view_admin_rwc_match_tree" model="ir.ui.view">
             <field name="name">rwc.match.tree</field>
@@ -281,6 +93,7 @@
             <field name="arch" type="xml">
                 <tree string="Matches" colors="blue:state=='to_play'">
                     <field name="date"/>
+                    <field name="match_round"/>
                     <field name="display_name" string="Match"/>
                     <field name="quiniela"/>
                     <field name="state"/>
@@ -306,6 +119,9 @@
                             <h1>
                                 <field name="display_name" string="Match"/>
                             </h1>
+                            <h3>
+                                <field name="match_round"/>
+                            </h3>
                         </div>
                         <group string="Score" style="text-align: center;">
                             <h3>
@@ -382,20 +198,381 @@
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">rwc.match</field>
             <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">kanban,tree,form</field>
             <field name="target">current</field>
+            <field name="search_view_id" ref="view_rwc_match_search"/>
+        </record>
+
+        <record id="action_admin_rwc_open_match_kanban" model="ir.actions.act_window.view">
+            <field name="sequence" eval="16"/>
+            <field name="view_mode">kanban</field>
+            <field name="view_id" ref="view_admin_rwc_match_kanban"/>
+            <field name="act_window_id" ref="action_admin_rwc_open_match"/>
         </record>
 
         <record id="action_admin_rwc_open_match_tree" model="ir.actions.act_window.view">
+            <field name="sequence" eval="17"/>
             <field name="view_mode">tree</field>
             <field name="view_id" ref="view_admin_rwc_match_tree"/>
             <field name="act_window_id" ref="action_admin_rwc_open_match"/>
         </record>
 
         <record id="action_admin_rwc_open_match_form" model="ir.actions.act_window.view">
+            <field name="sequence" eval="18"/>
             <field name="view_mode">form</field>
             <field name="view_id" ref="view_admin_rwc_match_form"/>
             <field name="act_window_id" ref="action_admin_rwc_open_match"/>
+        </record>
+
+
+        <!-- BET VIEWS AND ACTIONS -->
+
+        <record id="view_rwc_bet_search" model="ir.ui.view">
+            <field name="name">rwc.bet.search</field>
+            <field name="model">rwc.bet</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search>
+                   <field name="display_name" filter_domain="['|','|',('team_home','ilike',self),('team_away','ilike',self),('player_id','ilike',self)]"/>
+                   <separator/>
+                   <filter string="My bets" name="my_bets" domain="[('player_id.user_id','=',uid)]"/>
+                   <separator/>
+                   <filter string="To play" name="to_play" domain="[('state','=','to_play')]"/>
+                   <filter string="Finished" name="finished" domain="[('state','=','finished')]"/>
+                   <separator/>
+               </search>
+            </field>
+        </record>
+
+        <record id="view_admin_rwc_bet_tree" model="ir.ui.view">
+            <field name="name">rwc.bet.tree</field>
+            <field name="model">rwc.bet</field>
+            <field name="priority" eval="18"/>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Bets" colors="blue:state=='to_play'">
+                    <field name="date"/>
+                    <field name="player_id"/>
+                    <field name="display_name" string="Bet"/>
+                    <field name="hit"/>
+                    <field name="full_hit"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_admin_rwc_bet_form" model="ir.ui.view">
+            <field name="name">rwc.bet.form</field>
+            <field name="model">rwc.bet</field>
+            <field name="priority" eval="18"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Bets">
+                    <header>
+                        <field name="state" widget="statusbar" nolabel="1" statusbar_visible="to_play,finished"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="display_name" string="Bet"/>
+                            </h1>
+                            <label for="player_id"/>
+                            <div class="o_row">
+                                <field name="player_id" placeholder="Choose the player..."/>
+                            </div>
+                            <label for="match_id"/>
+                            <div class="o_row">
+                                <field name="match_id" placeholder="Choose the match..."/>
+                            </div>
+                        </div>
+                        <group string="Bet score" style="text-align: center;">
+                            <h3>
+                                <field name="flag_home" widget="image" class="oe_inline" options="{&quot;size&quot;: [45, 31]}" style="margin-right: 2%%; top: 14px;"/>
+                                <field name="team_home" class="oe_inline" style="margin-right: 5%%;"/> <field name="score_home" style="width:5%%;"/> 
+                                <field name="score_away" style="width:5%%;"/> <field name="team_away" class="oe_inline"/> 
+                                <field name="flag_away" widget="image" class="oe_inline" options="{&quot;size&quot;: [45, 31]}" style="margin-left: 2%%; top: 14px;"/>
+                            </h3>
+                        </group>
+                        <group string="Bet data">
+                            <group>
+                                <field name="date"/>
+                                <field name="quiniela"/>
+                            </group>
+                            <group>
+                                <field name="hit"/>
+                                <field name="full_hit"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_admin_rwc_open_bet" model="ir.actions.act_window">
+            <field name="name">Bets</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">rwc.bet</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="target">current</field>
+            <field name="search_view_id" ref="view_rwc_bet_search"/>
+        </record>
+
+        <record id="action_admin_rwc_open_bet_tree" model="ir.actions.act_window.view">
+            <field name="sequence" eval="16"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_admin_rwc_bet_tree"/>
+            <field name="act_window_id" ref="action_admin_rwc_open_bet"/>
+        </record>
+
+        <record id="action_admin_rwc_open_bet_form" model="ir.actions.act_window.view">
+            <field name="sequence" eval="17"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_admin_rwc_bet_form"/>
+            <field name="act_window_id" ref="action_admin_rwc_open_bet"/>
+        </record>
+
+
+        <!-- PLAYER VIEWS AND ACTIONS -->
+
+        <record id="view_admin_rwc_player_kanban" model="ir.ui.view">
+            <field name="name">rwc.player.kanban</field>
+            <field name="model">rwc.player</field>
+            <field name="priority" eval="18"/>
+            <field name="type">kanban</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="name"/>
+                    <field name="pos"/>
+                    <field name="score"/>
+                    <field name="score_stored"/>
+                    <field name="hits"/>
+                    <field name="full_hits"/>
+                    <field name="avatar"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="player-pos" style="width:10%%;float:left;">
+                                    <h1>
+                                        <field name="pos"/>
+                                    </h1>
+                                </div>
+                                <div class="player-content" style="width:89%%;float:left;">
+                                    <div class="o_kanban_image">
+                                        <img t-att-src="kanban_image('rwc.player', 'avatar', record.id.value)" width="60" height="60" class="oe_kanban_avatar"/>
+                                    </div>
+                                    <div class="o_kanban_title">
+                                        <field name="name"/>
+                                        <ul style="font-weight: normal;">
+                                            <li>Hits: <field name="hits"/></li>
+                                            <li>Full hits: <field name="full_hits"/></li>
+                                            <li><field name="score_stored" invisible="1"/></li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <div class="rwc-player-score">
+                                            Score: <field name="score"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="oe_clear"/>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="view_admin_rwc_player_tree" model="ir.ui.view">
+            <field name="name">rwc.player.tree</field>
+            <field name="model">rwc.player</field>
+            <field name="priority" eval="18"/>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Players">
+                    <field name="pos"/>
+                    <field name="name"/>
+                    <field name="user_id"/>
+                    <field name="score" invisible="1"/>
+                    <field name="score_stored"/>
+                    <field name="full_hits"/>
+                    <field name="hits"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_admin_rwc_player_form" model="ir.ui.view">
+            <field name="name">rwc.player.form</field>
+            <field name="model">rwc.player</field>
+            <field name="priority" eval="18"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Players">
+                    <sheet>
+                        <field name="avatar" widget="image" class="oe_avatar" options="{&quot;size&quot;: [90, 90]}"/>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" default_focus="1" placeholder="Alias"/>
+                            </h1>
+                            <div class="o_row">
+                                <field name="user_id" placeholder="Choose an Odoo user (not required)..."/>
+                            </div>
+                            <br/>
+                            <div class="o_row">
+                                <label for="pos"/>
+                                <field name="pos"/>
+                                <label for="score" invisible="1"/>
+                                <field name="score" invisible="1"/>
+                                <label for="score_stored"/>
+                                <field name="score_stored"/> 
+                                <label for="full_hits"/>
+                                <field name="full_hits"/>
+                                <label for="hits"/>
+                                <field name="hits"/>
+                            </div>
+                        </div>
+                        <group string="Bets">
+                            <field name="bet_ids" nolabel="1" widget="one2many_list" context="{'default_player_id': active_id}">
+                                <tree string="Bets" colors="blue:state=='to_play'">
+                                    <field name="date"/>
+                                    <field name="player_id" invisible="1"/>
+                                    <field name="match_id" invisible="1"/>
+                                    <field name="display_name" string="Bet"/>
+                                    <field name="hit"/>
+                                    <field name="full_hit"/>
+                                    <field name="state"/>
+                                </tree>
+                                <form string="Bets">
+                                    <sheet>
+                                        <div class="oe_title">
+                                            <h1>
+                                                <field name="display_name" string="Bet"/>
+                                            </h1>
+                                            <label for="player_id" invisible="1" />
+                                            <div class="o_row" invisible="1">
+                                                <field name="player_id" placeholder="Choose the player..."/>
+                                            </div>
+                                            <label for="match_id"/>
+                                            <div class="o_row">
+                                                <field name="match_id" placeholder="Choose the match..."/>
+                                            </div>
+                                        </div>
+                                        <group string="Bet score" style="text-align: center;">
+                                            <h3>
+                                                <field name="flag_home" widget="image" class="oe_inline" options="{&quot;size&quot;: [45, 31]}" style="margin-right: 2%%; top: 14px;"/>
+                                                <field name="team_home" class="oe_inline" style="margin-right: 5%%;"/> <field name="score_home" style="width:5%%;"/> 
+                                                <field name="score_away" style="width:5%%;"/> <field name="team_away" class="oe_inline"/> 
+                                                <field name="flag_away" widget="image" class="oe_inline" options="{&quot;size&quot;: [45, 31]}" style="margin-left: 2%%; top: 14px;"/>
+                                            </h3>
+                                        </group>
+                                        <group string="Bet data">
+                                            <group>
+                                                <field name="date"/>
+                                                <field name="quiniela"/>
+                                            </group>
+                                            <group>
+                                                <field name="hit"/>
+                                                <field name="full_hit"/>
+                                                <field name="state"/>
+                                            </group>
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_admin_rwc_open_player" model="ir.actions.act_window">
+            <field name="name">Players</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">rwc.player</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="target">current</field>
+        </record>
+
+        <record id="action_admin_rwc_open_player_kanban" model="ir.actions.act_window.view">
+            <field name="sequence" eval="16"/>
+            <field name="view_mode">kanban</field>
+            <field name="view_id" ref="view_admin_rwc_player_kanban"/>
+            <field name="act_window_id" ref="action_admin_rwc_open_player"/>
+        </record>
+
+        <record id="action_admin_rwc_open_player_tree" model="ir.actions.act_window.view">
+            <field name="sequence" eval="17"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_admin_rwc_player_tree"/>
+            <field name="act_window_id" ref="action_admin_rwc_open_player"/>
+        </record>
+
+        <record id="action_admin_rwc_open_player_form" model="ir.actions.act_window.view">
+            <field name="sequence" eval="18"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_admin_rwc_player_form"/>
+            <field name="act_window_id" ref="action_admin_rwc_open_player"/>
+        </record>
+
+
+        <!-- TEAM VIEWS AND ACTIONS -->
+
+        <record id="view_admin_rwc_team_tree" model="ir.ui.view">
+            <field name="name">rwc.team.tree</field>
+            <field name="model">rwc.team</field>
+            <field name="priority" eval="18"/>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Teams">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_admin_rwc_team_form" model="ir.ui.view">
+            <field name="name">rwc.team.form</field>
+            <field name="model">rwc.team</field>
+            <field name="priority" eval="18"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Teams">
+                    <sheet>
+                        <group style="text-align: center;">
+                            <field name="flag" widget="image" options="{&quot;size&quot;: [90, 63]}" nolabel="1" class="oe_inline"/>
+                        </group>
+                        <br/>
+                        <group style="text-align: center;">
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_admin_rwc_open_team" model="ir.actions.act_window">
+            <field name="name">Teams</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">rwc.team</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="target">current</field>
+        </record>
+
+        <record id="action_admin_rwc_open_team_tree" model="ir.actions.act_window.view">
+            <field name="sequence" eval="16"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_admin_rwc_team_tree"/>
+            <field name="act_window_id" ref="action_admin_rwc_open_team"/>
+        </record>
+
+        <record id="action_admin_rwc_open_team_form" model="ir.actions.act_window.view">
+            <field name="sequence" eval="17"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_admin_rwc_team_form"/>
+            <field name="act_window_id" ref="action_admin_rwc_open_team"/>
         </record>
 
 

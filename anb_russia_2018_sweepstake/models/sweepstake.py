@@ -4,6 +4,7 @@
 from odoo import models, fields, api, _
 from odoo.exceptions import Warning
 from datetime import datetime
+from bisect import bisect
 
 import logging
 _logger = logging.getLogger(__name__)
@@ -34,6 +35,20 @@ class RWCPlayer(models.Model):
             player.score = (
                 player.full_hits * 25 + (player.hits - player.full_hits) * 8)
 
+    @api.multi
+    @api.depends('score')
+    def _compute_pos(self):
+        all_players = self.env['rwc.player'].search([])
+        all_players_score = all_players.mapped('score')
+        scores_inv = [-score for score in all_players_score]
+        scores = sorted(list(set(scores_inv)))
+        for player in self:
+            player.pos = bisect(scores, -player.score)
+
+    pos = fields.Integer(
+        compute='_compute_pos',
+        string='Position',
+    )
     name = fields.Char(
         string='Alias',
         required=True,
@@ -383,6 +398,18 @@ class RWCMatch(models.Model):
         states={
             'finished': [('readonly', True)],
         },
+    )
+    match_round = fields.Selection(
+        selection=[
+            ('group_phase', 'Group phase'),
+            ('round_of_16', 'Round of 16'),
+            ('quarter_finals', 'Quarter-finals'),
+            ('semi_finals', 'Semi-finals'),
+            ('third_place', 'Play-off for third place'),
+            ('final', 'Final'),
+        ],
+        string='Round',
+        required=True,
     )
     state = fields.Selection(
         selection=[

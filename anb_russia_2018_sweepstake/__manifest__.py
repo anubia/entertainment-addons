@@ -49,6 +49,7 @@
         'security/ir.model.access.csv',
         'views/sweepstake_admin_view.xml',
         'views/sweepstake_view.xml',
+        'views/anb_russia_2018_sweepstake.xml',
     ],
     'demo': [],
     'test': [],
