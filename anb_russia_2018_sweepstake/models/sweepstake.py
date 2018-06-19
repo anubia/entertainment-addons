@@ -410,6 +410,9 @@ class RWCMatch(models.Model):
         ],
         string='Round',
         required=True,
+        states={
+            'finished': [('readonly', True)],
+        },
     )
     state = fields.Selection(
         selection=[

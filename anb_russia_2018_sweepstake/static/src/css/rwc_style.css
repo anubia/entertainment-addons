@@ -1,3 +1,16 @@
+/* MAIN styles */
+
+div.rwc-help-background {
+    background: url('../../description/rwc-logo.png') no-repeat;
+    top: 1%;
+    left: 1%;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    opacity: 0.12;
+}
+
+
 /* PLAYER styles */
 
 div.player-pos {

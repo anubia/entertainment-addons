@@ -10,11 +10,18 @@
             <field name="type">search</field>
             <field name="arch" type="xml">
                 <search>
-                   <field name="display_name" filter_domain="['|',('team_home','ilike',self),('team_away','ilike',self)]"/>
-                   <separator/>
-                   <filter string="To play" name="to_play" domain="[('state','=','to_play')]"/>
-                   <filter string="Finished" name="finished" domain="[('state','=','finished')]"/>
-                   <separator/>
+                    <field name="display_name" string="Team/Score" filter_domain="['|',('team_home','ilike',self),('team_away','ilike',self)]"/>
+                    <field name="team_home"/>
+                    <field name="team_away"/>
+                    <separator/>
+                    <filter string="To play" name="to_play" domain="[('state','=','to_play')]"/>
+                    <filter string="Finished" name="finished" domain="[('state','=','finished')]"/>
+                    <separator/>
+                    <group expand="0" string="Group By">
+                        <filter string="Round" name="round" domain="[]" context="{'group_by':'match_round'}"/>
+                        <filter string="State" name="state" domain="[]" context="{'group_by':'state'}"/>
+                        <filter string="Day" name="date" domain="[]" context="{'group_by':'date:day'}"/>
+                    </group>
                </search>
             </field>
         </record>
@@ -25,7 +32,7 @@
             <field name="priority" eval="18"/>
             <field name="type">kanban</field>
             <field name="arch" type="xml">
-                <kanban>
+                <kanban string="Matches">
                     <field name="display_name"/>
                     <field name="flag_home"/>
                     <field name="flag_away"/>
@@ -123,7 +130,7 @@
                                 <field name="match_round"/>
                             </h3>
                         </div>
-                        <group string="Score" style="text-align: center;">
+                        <group string="Match score" style="text-align: center;">
                             <h3>
                                 <field name="flag_home" widget="image" class="oe_inline" options="{&quot;size&quot;: [45, 31]}" style="margin-right: 2%%; top: 14px;"/>
                                 <field name="team_home" class="oe_inline" style="margin-right: 5%%;"/> <field name="score_home" style="width:5%%;"/> 
@@ -201,6 +208,34 @@
             <field name="view_mode">kanban,tree,form</field>
             <field name="target">current</field>
             <field name="search_view_id" ref="view_rwc_match_search"/>
+            <field name="help" type="html">
+                <div class="rwc-help-background"/>
+                <p class="oe_view_nocontent_create">
+                    Click to add a new match.
+                </p>
+                <p>
+                    Add a new match to keep on betting with your colleagues.
+                </p>
+                <p>
+                    By default, all the matches of the phase group of the Russia
+                    World Cup 2018 are added when this module is installed.
+                </p>
+                <p>
+                    If you have the game administrator rights, you can add new
+                    matches, in fact you should do that to add the final phase
+                    games.
+                </p>
+                <p>
+                    Be careful with the date of the match you are creating. If
+                    the current date is later than it, players will not be able
+                    to bet through their Odoo accounts.
+                </p>
+                <p>
+                    When the game is finished, the game administrator must
+                    freeze it, setting its state to finished. When this happens,
+                    the bets of the match are punctuated.
+                </p>
+            </field>
         </record>
 
         <record id="action_admin_rwc_open_match_kanban" model="ir.actions.act_window.view">
@@ -233,13 +268,20 @@
             <field name="type">search</field>
             <field name="arch" type="xml">
                 <search>
-                   <field name="display_name" filter_domain="['|','|',('team_home','ilike',self),('team_away','ilike',self),('player_id','ilike',self)]"/>
-                   <separator/>
-                   <filter string="My bets" name="my_bets" domain="[('player_id.user_id','=',uid)]"/>
-                   <separator/>
-                   <filter string="To play" name="to_play" domain="[('state','=','to_play')]"/>
-                   <filter string="Finished" name="finished" domain="[('state','=','finished')]"/>
-                   <separator/>
+                    <field name="display_name" string="Team/Player/Score" filter_domain="['|','|',('team_home','ilike',self),('team_away','ilike',self),('player_id','ilike',self)]"/>
+                    <field name="player_id"/>
+                    <field name="team_home"/>
+                    <field name="team_away"/>
+                    <separator/>
+                    <filter string="My bets" name="my_bets" domain="[('player_id.user_id','=',uid)]"/>
+                    <separator/>
+                    <filter string="To play" name="to_play" domain="[('state','=','to_play')]"/>
+                    <filter string="Finished" name="finished" domain="[('state','=','finished')]"/>
+                    <separator/>
+                    <group expand="0" string="Group By">
+                        <filter string="Player" domain="[]" context="{'group_by':'player_id'}"/>
+                        <filter string="State" domain="[]" context="{'group_by':'state'}"/>
+                    </group>
                </search>
             </field>
         </record>
@@ -316,6 +358,36 @@
             <field name="view_mode">tree,form</field>
             <field name="target">current</field>
             <field name="search_view_id" ref="view_rwc_bet_search"/>
+            <field name="help" type="html">
+                <div class="rwc-help-background"/>
+                <p class="oe_view_nocontent_create">
+                    Click to add a bet in any match which has not started yet.
+                </p>
+                <p>
+                    Add a bet to try to guess the score of a match.
+                </p>
+                <p>
+                    When you guess that, you win by default 25 points which
+                    allows you to improve your position in the players ranking.
+                    If you do not guess the score but you guess which team win
+                    or if both teams reach a draw, you win by default 8 points.
+                    Otherwise, you do not win any point.
+                </p>
+                <p>
+                    If you have player rights, you are not allowed to create
+                    or modify a bet of a match which has already started. So
+                    pay attention: do not forget to bet before the beginning
+                    of a match!
+                </p>
+                <p>
+                    Besides, if you have player rights, you cannot see the
+                    bets made by the rest of the players until the match is
+                    set as finished. This way, you cannot defend your position
+                    in the ranking copying the bets of other players who can
+                    overtake you in the ranking if they punctuate with their
+                    bet.
+                </p>
+            </field>
         </record>
 
         <record id="action_admin_rwc_open_bet_tree" model="ir.actions.act_window.view">
@@ -335,13 +407,25 @@
 
         <!-- PLAYER VIEWS AND ACTIONS -->
 
+        <record id="view_rwc_player_search" model="ir.ui.view">
+            <field name="name">rwc.player.search</field>
+            <field name="model">rwc.player</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="score_stored"/>
+               </search>
+            </field>
+        </record>
+
         <record id="view_admin_rwc_player_kanban" model="ir.ui.view">
             <field name="name">rwc.player.kanban</field>
             <field name="model">rwc.player</field>
             <field name="priority" eval="18"/>
             <field name="type">kanban</field>
             <field name="arch" type="xml">
-                <kanban>
+                <kanban string="Players">
                     <field name="name"/>
                     <field name="pos"/>
                     <field name="score"/>
@@ -492,6 +576,41 @@
             <field name="view_type">form</field>
             <field name="view_mode">kanban,tree,form</field>
             <field name="target">current</field>
+            <field name="search_view_id" ref="view_rwc_player_search"/>
+            <field name="help" type="html">
+                <div class="rwc-help-background"/>
+                <p class="oe_view_nocontent_create">
+                    Click to add a new player.
+                </p>
+                <p>
+                    Add as many players as people are going to play the
+                    sweepstake, it does not matter if they have Odoo account
+                    or not.
+                </p>
+                <p>
+                    If you create a player without filling in the user field,
+                    only the game administrators will be able to introduce his/her
+                    bets in the database, since this kind of player will not be
+                    able to connect to Odoo with his/her own account. Otherwise,
+                    if you fill in the user field, the player will have an Odoo
+                    account associated, and he/she will be able to bet by
+                    himself/herself. Just check that his/her Odoo user has at
+                    least sweepstake player rights in the Odoo user settings.
+                </p>
+                <p>
+                    A player cannot bet after the beginning of a match, and
+                    cannot see the bets made by the rest of the players until
+                    the match is set as finished. This way, he/she cannot defend
+                    his/her position in the ranking copying the bets of other
+                    players who can overtake him/her in the ranking if they
+                    punctuate with their bet.
+                </p>
+                <p>
+                    A manager can bet whenever he wants and modify other players
+                    bets. So the manager must be a person in whom everyone trust,
+                    because he could do tricks to win the sweepstake!
+                </p>
+            </field>
         </record>
 
         <record id="action_admin_rwc_open_player_kanban" model="ir.actions.act_window.view">
@@ -517,6 +636,17 @@
 
 
         <!-- TEAM VIEWS AND ACTIONS -->
+
+        <record id="view_rwc_team_search" model="ir.ui.view">
+            <field name="name">rwc.team.search</field>
+            <field name="model">rwc.team</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+               </search>
+            </field>
+        </record>
 
         <record id="view_admin_rwc_team_tree" model="ir.ui.view">
             <field name="name">rwc.team.tree</field>
@@ -559,6 +689,24 @@
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="target">current</field>
+            <field name="search_view_id" ref="view_rwc_team_search"/>
+            <field name="help" type="html">
+                <div class="rwc-help-background"/>
+                <p class="oe_view_nocontent_create">
+                    Click to add a new teams.
+                </p>
+                <p>
+                    The possibility of adding a new team is enabled, but by
+                    default, every national team of the Russia World Cup 2018
+                    is added when the module is installed.
+                </p>
+                <p>
+                    However, we decided to allow this just in case the users
+                    want to play more after the World Cup. But we will launch
+                    new sweepstake modules, do not hesitate in suggesting us
+                    new functionalities!
+                </p>
+            </field>
         </record>
 
         <record id="action_admin_rwc_open_team_tree" model="ir.actions.act_window.view">

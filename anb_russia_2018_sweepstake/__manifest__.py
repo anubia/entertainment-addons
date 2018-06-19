@@ -22,12 +22,14 @@
 ##############################################################################
 
 {
-    'name': 'Russia 2018 Sweepstake',
+    'name': 'Russia World Cup 2018 Sweepstake',
     'summary': 'The World Cup 2018 sweepstake game for Odoo users',
     'description': """Description in HTML file.
 - Sweepstake World Sweepstake
 - Sweepstake Russia Sweepstake
 - Sweepstake Cup Sweepstake
+- Game
+- Gamification
 - Anubia Soluciones en la Nube, S.L.
 """,
     'category': 'Gaming',
@@ -38,7 +40,7 @@
         'Juan Formoso Vasco <jfv@anubia.es>',
     ],
     'website': 'http://www.anubia.es',
-    'complexity': 'easy',
+    'complexity': 'complex',
     'depends': [
         'base',
     ],
@@ -59,18 +61,15 @@
         'static/description/main_2.png',
         'static/description/main_3.png',
         'static/description/main_4.png',
+        'static/description/main_5.png',
         'static/description/anubia-logo.png',
-        'static/description/flags/france-flag.png',
-        'static/description/flags/galicia-flag.png',
-        'static/description/flags/germany-flag.png',
-        'static/description/flags/italy-flag.png',
-        'static/description/flags/portugal-flag.png',
+        'static/description/rwc-logo.png',
         'static/description/flags/spain-flag.png',
         'static/description/flags/uk-flag.png',
     ],
     'installable': True,
     'auto_install': False,
-    'application': False,
+    'application': True,
     'price': 0,
     'currency': 'EUR',
 }
