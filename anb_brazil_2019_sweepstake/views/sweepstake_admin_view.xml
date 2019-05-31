@@ -20,7 +20,7 @@
                     <group expand="0" string="Group By">
                         <filter string="Round" name="group_by_round" domain="[]" context="{'group_by':'match_round'}"/>
                         <filter string="State" name="group_by_state" domain="[]" context="{'group_by':'state'}"/>
-                        <filter string="Day" name="group_by_day" domain="[]" context="{'group_by':'date:day'}"/>
+                        <filter string="Date" name="group_by_date" domain="[]" context="{'group_by':'date:day'}"/>
                     </group>
                </search>
             </field>
@@ -51,7 +51,7 @@
                                     </div>
                                     <div class="oe_kanban_details" t-if="record.state.raw_value=='finished'">
                                         <div class="home-flag pull-left">
-                                            <img t-att-src="kanban_image('bac.match', 'flag_home', record.id.raw_value)" width="45" height="31" class="oe_kanban_avatar"/>
+                                            <img t-att-src="kanban_image('bac.match', 'flag_home', record.id.raw_value)" width="45" height="31" class="oe_kanban_avatar" alt="Match"/>
                                         </div>
                                         <div class="home-team pull-left">
                                             <field name="team_home"/>
@@ -70,18 +70,18 @@
                                             <field name="team_away"/>
                                         </div>
                                         <div class="away-flag pull-left">
-                                            <img t-att-src="kanban_image('bac.match', 'flag_away', record.id.raw_value)" width="45" height="31" class="oe_kanban_avatar"/>
+                                            <img t-att-src="kanban_image('bac.match', 'flag_away', record.id.raw_value)" width="45" height="31" class="oe_kanban_avatar" alt="Match"/>
                                         </div>
                                     </div>
                                     <div class="oe_kanban_details" t-if="record.state.raw_value!='finished'">
                                         <div class="home-flag pull-left">
-                                            <img t-att-src="kanban_image('bac.match', 'flag_home', record.id.raw_value)" width="45" height="31" class="oe_kanban_avatar"/>
+                                            <img t-att-src="kanban_image('bac.match', 'flag_home', record.id.raw_value)" width="45" height="31" class="oe_kanban_avatar" alt="Match"/>
                                         </div>
                                         <div class="match-display-name pull-left">
                                             <field name="display_name"/>
                                         </div>
                                         <div class="away-flag pull-left">
-                                            <img t-att-src="kanban_image('bac.match', 'flag_away', record.id.raw_value)" width="45" height="31" class="oe_kanban_avatar"/>
+                                            <img t-att-src="kanban_image('bac.match', 'flag_away', record.id.raw_value)" width="45" height="31" class="oe_kanban_avatar" alt="Match"/>
                                         </div>
                                     </div>
                                 </div>
@@ -445,7 +445,7 @@
                                 </div>
                                 <div class="player-content" style="width:89%%;float:left;">
                                     <div class="o_kanban_image">
-                                        <img t-att-src="kanban_image('bac.player', 'avatar', record.id.raw_value)" width="60" height="60" class="oe_kanban_avatar"/>
+                                        <img t-att-src="kanban_image('bac.player', 'avatar', record.id.raw_value)" width="60" height="60" class="oe_kanban_avatar" alt="Player"/>
                                     </div>
                                     <div class="o_kanban_title">
                                         <field name="name"/>

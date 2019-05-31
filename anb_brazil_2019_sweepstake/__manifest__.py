@@ -14,7 +14,7 @@
 - Anubia Soluciones en la Nube, S.L.
 """,
     'category': 'Extra Tools',
-    'version': '11.0.0.1',
+    'version': '12.0.0.1',
     'author': 'Anubía Soluciones en la Nube, SL, Juan Formoso Vasco',
     'maintainer': 'Anubía Soluciones en la Nube, SL, Juan Formoso Vasco',
     'contributors': [

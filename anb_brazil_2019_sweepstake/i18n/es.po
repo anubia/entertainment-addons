@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-31 11:53+0000\n"
-"PO-Revision-Date: 2019-05-31 13:54+0200\n"
+"POT-Creation-Date: 2019-05-31 11:41+0000\n"
+"PO-Revision-Date: 2019-05-31 13:42+0200\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "Language: es\n"
@@ -18,8 +18,8 @@ msgstr ""
 "X-Generator: Poedit 2.0.6\n"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_admin_bac_open_player
-#: model:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_bac_open_player
+#: model_terms:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_admin_bac_open_player
+#: model_terms:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_bac_open_player
 msgid ""
 "A manager can bet whenever he wants and modify other players\n"
 "                    bets. So the manager must be a person in whom everyone "
@@ -33,8 +33,8 @@ msgstr ""
 "                    porque ¡podría hacer trampas para ganar la porra!"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_admin_bac_open_player
-#: model:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_bac_open_player
+#: model_terms:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_admin_bac_open_player
+#: model_terms:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_bac_open_player
 msgid ""
 "A player cannot bet after the beginning of a match, and\n"
 "                    cannot see the bets made by the rest of the players "
@@ -72,20 +72,20 @@ msgid "A user cannot have more than one participant."
 msgstr "Un usuario no puede tener más de un jugador asignado."
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_admin_bac_open_bet
-#: model:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_bac_open_bet
+#: model_terms:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_admin_bac_open_bet
+#: model_terms:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_bac_open_bet
 msgid "Add a bet to try to guess the score of a match."
 msgstr "Añade una apuesta para intentar adivinar el resultado de un partido."
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_admin_bac_open_match
-#: model:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_bac_open_match
+#: model_terms:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_admin_bac_open_match
+#: model_terms:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_bac_open_match
 msgid "Add a new match to keep on betting with your colleagues."
 msgstr "Añade un nuevo partido para continuar apostando con tus compañeros."
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_admin_bac_open_player
-#: model:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_bac_open_player
+#: model_terms:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_admin_bac_open_player
+#: model_terms:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_bac_open_player
 msgid ""
 "Add as many players as people are going to play the\n"
 "                    sweepstake, it does not matter if they have Odoo "
@@ -97,32 +97,32 @@ msgstr ""
 "                    o no."
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_player_name
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_player_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_player_form
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_player__name
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_player_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_player_form
 msgid "Alias"
 msgstr "Alias"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_player_avatar
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_player__avatar
 msgid "Avatar"
 msgstr "Avatar"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet_score_away
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_match_score_away
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet__score_away
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_match__score_away
 msgid "Away score"
 msgstr "Resultado visitante"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet_team_away
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_match_team_away
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet__team_away
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_match__team_away
 msgid "Away team"
 msgstr "Equipo visitante"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_admin_bac_open_match
-#: model:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_bac_open_match
+#: model_terms:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_admin_bac_open_match
+#: model_terms:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_bac_open_match
 msgid ""
 "Be careful with the date of the match you are creating. If\n"
 "                    the current date is later than it, players will not be "
@@ -135,8 +135,8 @@ msgstr ""
 "                    apostar desde sus cuentas de Odoo."
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_admin_bac_open_bet
-#: model:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_bac_open_bet
+#: model_terms:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_admin_bac_open_bet
+#: model_terms:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_bac_open_bet
 msgid ""
 "Besides, if you have player rights, you cannot see the\n"
 "                    bets made by the rest of the players until the match is\n"
@@ -159,68 +159,68 @@ msgstr ""
 "                    apuesta."
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_bet_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_bet_tree
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_match_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_player_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_bet_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_bet_tree
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_player_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_bet_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_bet_tree
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_match_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_player_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_bet_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_bet_tree
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_player_form
 msgid "Bet"
 msgstr "Apuesta"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_form
 msgid "Bet Score"
 msgstr "Resultado de la apuesta"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_bet_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_match_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_player_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_bet_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_player_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_bet_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_match_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_player_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_bet_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_player_form
 msgid "Bet data"
 msgstr "Información de la apuesta"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_bet_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_match_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_player_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_bet_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_player_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_bet_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_match_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_player_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_bet_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_player_form
 msgid "Bet score"
 msgstr "Resultado de la apuesta"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_match_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_match_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_form
 msgid "Bet!"
 msgstr "¡Apostar!"
 
 #. module: anb_brazil_2019_sweepstake
 #: model:ir.actions.act_window,name:anb_brazil_2019_sweepstake.action_admin_bac_open_bet
 #: model:ir.actions.act_window,name:anb_brazil_2019_sweepstake.action_bac_open_bet
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_match_bet_ids
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_player_bet_ids
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_match__bet_ids
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_player__bet_ids
 #: model:ir.ui.menu,name:anb_brazil_2019_sweepstake.menu_admin_bac_bet
 #: model:ir.ui.menu,name:anb_brazil_2019_sweepstake.menu_bac_bet
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_bet_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_bet_tree
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_match_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_player_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_bet_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_bet_tree
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_player_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_bet_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_bet_tree
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_match_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_player_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_bet_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_bet_tree
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_player_form
 msgid "Bets"
 msgstr "Apuestas"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_admin_bac_open_match
-#: model:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_bac_open_match
+#: model_terms:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_admin_bac_open_match
+#: model_terms:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_bac_open_match
 msgid ""
 "By default, all the matches of the phase group of the Russia\n"
 "                    World Cup 2018 are added when this module is installed."
@@ -229,89 +229,85 @@ msgstr ""
 "                    de Rusia 2018 son añadidas al instalar este módulo."
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_player_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_player_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_player_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_player_form
 msgid "Choose an Odoo user (not required)..."
 msgstr "Elige un usuario de Odoo (no obligatorio)..."
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_bet_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_match_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_player_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_bet_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_player_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_bet_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_match_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_player_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_bet_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_player_form
 msgid "Choose the match..."
 msgstr "Elige el partido..."
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_bet_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_match_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_player_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_bet_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_player_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_bet_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_match_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_player_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_bet_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_player_form
 msgid "Choose the player..."
 msgstr "Elige el jugador..."
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_admin_bac_open_bet
-#: model:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_bac_open_bet
+#: model_terms:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_admin_bac_open_bet
+#: model_terms:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_bac_open_bet
 msgid "Click to add a bet in any match which has not started yet."
 msgstr ""
 "Haz click para añadir una apuesta en cualquier partido que no haya empezado "
 "todavía."
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_admin_bac_open_match
-#: model:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_bac_open_match
+#: model_terms:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_admin_bac_open_match
+#: model_terms:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_bac_open_match
 msgid "Click to add a new match."
 msgstr "Haz click para añadir un nuevo partido."
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_admin_bac_open_player
-#: model:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_bac_open_player
+#: model_terms:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_admin_bac_open_player
+#: model_terms:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_bac_open_player
 msgid "Click to add a new player."
 msgstr "Haz click para añadir un nuevo jugador."
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_admin_bac_open_team
-#: model:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_bac_open_team
+#: model_terms:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_admin_bac_open_team
+#: model_terms:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_bac_open_team
 msgid "Click to add a new teams."
 msgstr "Haz click para añadir un nuevo equipo."
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet_create_uid
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_match_create_uid
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_player_create_uid
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_team_create_uid
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet__create_uid
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_match__create_uid
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_player__create_uid
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_team__create_uid
 msgid "Created by"
 msgstr "Creado por"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet_create_date
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_match_create_date
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_player_create_date
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_team_create_date
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet__create_date
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_match__create_date
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_player__create_date
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_team__create_date
 msgid "Created on"
 msgstr "Creado el"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet_date
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_match_date
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet__date
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_match__date
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_search
 msgid "Date"
 msgstr "Fecha"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_search
-msgid "Day"
-msgstr "Día"
-
-#. module: anb_brazil_2019_sweepstake
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet_display_name
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_match_display_name
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_player_display_name
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_team_display_name
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet__display_name
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_match__display_name
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_player__display_name
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_team__display_name
 msgid "Display Name"
 msgstr "Nombre a mostrar"
 
@@ -321,17 +317,17 @@ msgid "Final"
 msgstr "Final"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_match_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_match_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_form
 msgid "Finish"
 msgstr "Finalizar"
 
 #. module: anb_brazil_2019_sweepstake
 #: selection:bac.match,state:0
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_match_kanban
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_bet_search
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_kanban
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_search
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_match_kanban
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_bet_search
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_kanban
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_search
 msgid "Finished"
 msgstr "Finalizado"
 
@@ -346,33 +342,33 @@ msgstr ""
 "juego si no tienes permisos suficientes para crear jugadores."
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet_flag_away
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet_flag_home
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_match_flag_away
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_match_flag_home
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_team_flag
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet__flag_away
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet__flag_home
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_match__flag_away
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_match__flag_home
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_team__flag
 msgid "Flag"
 msgstr "Bandera"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet_full_hit
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet__full_hit
 msgid "Full hit"
 msgstr "Acierto total"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_player_full_hits
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_player__full_hits
 msgid "Full hits"
 msgstr "Aciertos totales"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_player_kanban
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_player_kanban
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_player_kanban
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_player_kanban
 msgid "Full hits:"
 msgstr "Aciertos totales:"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_bet_search
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_search
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_bet_search
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_search
 msgid "Group By"
 msgstr "Agrupar por"
 
@@ -382,36 +378,36 @@ msgid "Group phase"
 msgstr "Fase de grupos"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet_hit
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet__hit
 msgid "Hit"
 msgstr "Acierto"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_player_hits
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_player__hits
 msgid "Hits"
 msgstr "Aciertos"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_player_kanban
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_player_kanban
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_player_kanban
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_player_kanban
 msgid "Hits:"
 msgstr "Aciertos:"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet_score_home
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_match_score_home
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet__score_home
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_match__score_home
 msgid "Home score"
 msgstr "Resultado local"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet_team_home
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_match_team_home
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet__team_home
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_match__team_home
 msgid "Home team"
 msgstr "Equipo local"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_admin_bac_open_team
-#: model:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_bac_open_team
+#: model_terms:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_admin_bac_open_team
+#: model_terms:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_bac_open_team
 msgid ""
 "However, we decided to allow this just in case the users\n"
 "                    want to play more after the World Cup. But we will "
@@ -427,16 +423,16 @@ msgstr ""
 "                    nuevas funcionalidades!"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet_id
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_match_id
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_player_id
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_team_id
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet__id
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_match__id
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_player__id
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_team__id
 msgid "ID"
 msgstr "ID"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_admin_bac_open_player
-#: model:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_bac_open_player
+#: model_terms:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_admin_bac_open_player
+#: model_terms:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_bac_open_player
 msgid ""
 "If you create a player without filling in the user field,\n"
 "                    only the game administrators will be able to introduce "
@@ -466,8 +462,8 @@ msgstr ""
 "configuración del usuario de Odoo."
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_admin_bac_open_bet
-#: model:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_bac_open_bet
+#: model_terms:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_admin_bac_open_bet
+#: model_terms:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_bac_open_bet
 msgid ""
 "If you have player rights, you are not allowed to create\n"
 "                    or modify a bet of a match which has already started. "
@@ -483,8 +479,8 @@ msgstr ""
 "                    de un partido!"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_admin_bac_open_match
-#: model:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_bac_open_match
+#: model_terms:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_admin_bac_open_match
+#: model_terms:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_bac_open_match
 msgid ""
 "If you have the game administrator rights, you can add new\n"
 "                    matches, in fact you should do that to add the final "
@@ -497,26 +493,26 @@ msgstr ""
 "                    de la fase final."
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet___last_update
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_match___last_update
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_player___last_update
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_team___last_update
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet____last_update
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_match____last_update
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_player____last_update
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_team____last_update
 msgid "Last Modified on"
 msgstr "Última modificación el"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet_write_uid
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_match_write_uid
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_player_write_uid
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_team_write_uid
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet__write_uid
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_match__write_uid
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_player__write_uid
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_team__write_uid
 msgid "Last Updated by"
 msgstr "Última actualización por"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet_write_date
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_match_write_date
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_player_write_date
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_team_write_date
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet__write_date
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_match__write_date
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_player__write_date
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_team__write_date
 msgid "Last Updated on"
 msgstr "Última actualización el"
 
@@ -526,23 +522,25 @@ msgid "Manager"
 msgstr "Administrador"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet_match_id
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_match_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_match_tree
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_tree
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet__match_id
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_match_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_match_kanban
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_match_tree
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_kanban
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_tree
 msgid "Match"
 msgstr "Partido"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_match_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_match_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_form
 msgid "Match data"
 msgstr "Información del partido"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_match_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_match_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_form
 msgid "Match score"
 msgstr "Resultado del partido"
 
@@ -551,22 +549,22 @@ msgstr "Resultado del partido"
 #: model:ir.actions.act_window,name:anb_brazil_2019_sweepstake.action_bac_open_match
 #: model:ir.ui.menu,name:anb_brazil_2019_sweepstake.menu_admin_bac_match
 #: model:ir.ui.menu,name:anb_brazil_2019_sweepstake.menu_bac_match
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_match_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_match_kanban
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_match_tree
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_kanban
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_tree
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_match_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_match_kanban
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_match_tree
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_kanban
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_tree
 msgid "Matches"
 msgstr "Partidos"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_bet_search
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_bet_search
 msgid "My bets"
 msgstr "Mis apuestas"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_team_name
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_team__name
 msgid "Name"
 msgstr "Nombre"
 
@@ -576,8 +574,10 @@ msgid "Play-off for third place"
 msgstr "3ª/4º puesto"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet_player_id
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_bet_search
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet__player_id
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_player_kanban
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_bet_search
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_player_kanban
 #: model:res.groups,name:anb_brazil_2019_sweepstake.sweepstake_player_group_user
 msgid "Player"
 msgstr "Jugador"
@@ -585,14 +585,14 @@ msgstr "Jugador"
 #. module: anb_brazil_2019_sweepstake
 #: model:ir.actions.act_window,name:anb_brazil_2019_sweepstake.action_admin_bac_open_player
 #: model:ir.ui.menu,name:anb_brazil_2019_sweepstake.menu_admin_bac_player
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_player_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_player_kanban
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_player_tree
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_player_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_player_kanban
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_player_tree
 msgid "Players"
 msgstr "Jugadores"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_player_pos
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_player__pos
 msgid "Position"
 msgstr "Posición"
 
@@ -602,35 +602,35 @@ msgid "Quarter-finals"
 msgstr "Cuartos de final"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet_quiniela
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_match_quiniela
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet__quiniela
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_match__quiniela
 msgid "Quiniela"
 msgstr "Quiniela"
 
 #. module: anb_brazil_2019_sweepstake
 #: model:ir.actions.act_window,name:anb_brazil_2019_sweepstake.action_bac_open_player
 #: model:ir.ui.menu,name:anb_brazil_2019_sweepstake.menu_bac_player
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_player_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_player_kanban
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_player_tree
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_player_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_player_kanban
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_player_tree
 msgid "Ranking"
 msgstr "Clasificación"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_match_match_round
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_search
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_match__match_round
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_search
 msgid "Round"
 msgstr "Ronda"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_player_score
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_player_score_stored
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_player__score
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_player__score_stored
 msgid "Score"
 msgstr "Puntos"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_player_kanban
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_player_kanban
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_player_kanban
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_player_kanban
 msgid "Score:"
 msgstr "Puntos:"
 
@@ -650,10 +650,10 @@ msgid "Settings"
 msgstr "Configuración"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet_state
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_match_state
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_bet_search
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_search
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet__state
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_match__state
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_bet_search
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_search
 msgid "State"
 msgstr "Estado"
 
@@ -665,12 +665,12 @@ msgid "Sweepstake"
 msgstr "Porra"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_bet_search
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_bet_search
 msgid "Team/Player/Score"
 msgstr "Equipo/Jugador/Resultado"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_search
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_search
 msgid "Team/Score"
 msgstr "Equipo/Resultado"
 
@@ -679,16 +679,16 @@ msgstr "Equipo/Resultado"
 #: model:ir.actions.act_window,name:anb_brazil_2019_sweepstake.action_bac_open_team
 #: model:ir.ui.menu,name:anb_brazil_2019_sweepstake.menu_admin_bac_team
 #: model:ir.ui.menu,name:anb_brazil_2019_sweepstake.menu_bac_team
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_team_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_team_tree
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_team_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_team_tree
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_team_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_team_tree
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_team_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_team_tree
 msgid "Teams"
 msgstr "Equipos"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_admin_bac_open_team
-#: model:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_bac_open_team
+#: model_terms:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_admin_bac_open_team
+#: model_terms:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_bac_open_team
 msgid ""
 "The possibility of adding a new team is enabled, but by\n"
 "                    default, every national team of the Russia World Cup "
@@ -715,12 +715,12 @@ msgstr "El usuario podrá jugar la porra."
 
 #. module: anb_brazil_2019_sweepstake
 #: selection:bac.match,state:0
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_match_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_match_kanban
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_bet_search
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_form
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_kanban
-#: model:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_search
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_match_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_admin_bac_match_kanban
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_bet_search
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_form
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_kanban
+#: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_match_search
 msgid "To play"
 msgstr "Por jugar"
 
@@ -742,13 +742,13 @@ msgstr ""
 "inicio del partido."
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_player_user_id
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_player__user_id
 msgid "User"
 msgstr "Usuario"
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_admin_bac_open_match
-#: model:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_bac_open_match
+#: model_terms:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_admin_bac_open_match
+#: model_terms:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_bac_open_match
 msgid ""
 "When the game is finished, the game administrator must\n"
 "                    freeze it, setting its state to finished. When this "
@@ -761,8 +761,8 @@ msgstr ""
 "                    las apuestas del partido son puntuadas."
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_admin_bac_open_bet
-#: model:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_bac_open_bet
+#: model_terms:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_admin_bac_open_bet
+#: model_terms:ir.actions.act_window,help:anb_brazil_2019_sweepstake.action_bac_open_bet
 msgid ""
 "When you guess that, you win by default 25 points which\n"
 "                    allows you to improve your position in the players "
@@ -799,6 +799,9 @@ msgstr ""
 #: model:ir.model,name:anb_brazil_2019_sweepstake.model_bac_team
 msgid "bac.team"
 msgstr ""
+
+#~ msgid "Day"
+#~ msgstr "Día"
 
 #~ msgid "Round of 16"
 #~ msgstr "Octavos"

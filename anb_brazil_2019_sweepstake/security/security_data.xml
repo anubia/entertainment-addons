@@ -24,7 +24,7 @@
             <field name="category_id" ref="ir_module_category_sweepstake"/>
             <field name="comment">The user will be able to play the sweepstake and to manage players, bets, matches, teams...</field>
             <field name="implied_ids" eval="[(4, ref('anb_brazil_2019_sweepstake.sweepstake_player_group_user'))]"/>
-            <field name="users" eval="[(4, ref('base.user_root'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
         </record>
 
 

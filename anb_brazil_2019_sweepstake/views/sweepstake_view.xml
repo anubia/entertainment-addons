@@ -28,7 +28,7 @@
                                     </div>
                                     <div class="oe_kanban_details" t-if="record.state.raw_value=='finished'">
                                         <div class="home-flag pull-left">
-                                            <img t-att-src="kanban_image('bac.match', 'flag_home', record.id.raw_value)" width="45" height="31" class="oe_kanban_avatar"/>
+                                            <img t-att-src="kanban_image('bac.match', 'flag_home', record.id.raw_value)" width="45" height="31" class="oe_kanban_avatar" alt="Match"/>
                                         </div>
                                         <div class="home-team pull-left">
                                             <field name="team_home"/>
@@ -47,18 +47,18 @@
                                             <field name="team_away"/>
                                         </div>
                                         <div class="away-flag pull-left">
-                                            <img t-att-src="kanban_image('bac.match', 'flag_away', record.id.raw_value)" width="45" height="31" class="oe_kanban_avatar"/>
+                                            <img t-att-src="kanban_image('bac.match', 'flag_away', record.id.raw_value)" width="45" height="31" class="oe_kanban_avatar" alt="Match"/>
                                         </div>
                                     </div>
                                     <div class="oe_kanban_details" t-if="record.state.raw_value!='finished'">
                                         <div class="home-flag pull-left">
-                                            <img t-att-src="kanban_image('bac.match', 'flag_home', record.id.raw_value)" width="45" height="31" class="oe_kanban_avatar"/>
+                                            <img t-att-src="kanban_image('bac.match', 'flag_home', record.id.raw_value)" width="45" height="31" class="oe_kanban_avatar" alt="Match"/>
                                         </div>
                                         <div class="match-display-name pull-left">
                                             <field name="display_name"/>
                                         </div>
                                         <div class="away-flag pull-left">
-                                            <img t-att-src="kanban_image('bac.match', 'flag_away', record.id.raw_value)" width="45" height="31" class="oe_kanban_avatar"/>
+                                            <img t-att-src="kanban_image('bac.match', 'flag_away', record.id.raw_value)" width="45" height="31" class="oe_kanban_avatar" alt="Match"/>
                                         </div>
                                     </div>
                                 </div>
@@ -184,7 +184,7 @@
             <field name="view_mode">kanban,tree,form</field>
             <field name="target">current</field>
             <!-- Following line triggers the Odoo bug: https://github.com/odoo/odoo/issues/33793 -->
-            <field name="context">{'search_default_to_play': 1, 'search_default_group_by_day': 1}</field>
+            <field name="context">{'search_default_to_play': 1, 'search_default_group_by_date': 1}</field>
             <field name="search_view_id" ref="view_bac_match_search"/>
             <field name="help" type="html">
                 <div class="bac-help-background"/>
@@ -349,14 +349,14 @@
                                 </div>
                                 <div class="player-content" style="width:89%%;float:left;">
                                     <div class="o_kanban_image">
-                                        <img t-att-src="kanban_image('bac.player', 'avatar', record.id.raw_value)" width="60" height="60" class="oe_kanban_avatar"/>
+                                        <img t-att-src="kanban_image('bac.player', 'avatar', record.id.raw_value)" width="60" height="60" class="oe_kanban_avatar" alt="Player"/>
                                     </div>
                                     <div class="o_kanban_title">
                                         <field name="name"/>
                                         <ul style="font-weight: normal;">
                                             <li>Hits: <field name="hits"/></li>
                                             <li>Full hits: <field name="full_hits"/></li>
-                                            <field name="score_stored" invisible="1"/>
+                                            <li><field name="score_stored" invisible="1"/></li>
                                         </ul>
                                     </div>
                                     <div>
