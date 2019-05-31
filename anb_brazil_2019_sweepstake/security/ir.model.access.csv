@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_bac_player_player,bac.player player,model_bac_player,sweepstake_player_group_user,1,1,0,0
+access_bac_player_admin,bac.player admin,model_bac_player,sweepstake_admin_group_user,1,1,1,1
+access_bac_bet_player,bac.bet player,model_bac_bet,sweepstake_player_group_user,1,1,1,1
+access_bac_bet_admin,bac.bet admin,model_bac_bet,sweepstake_admin_group_user,1,1,1,1
+access_bac_match_player,bac.match player,model_bac_match,sweepstake_player_group_user,1,0,0,0
+access_bac_match_admin,bac.match admin,model_bac_match,sweepstake_admin_group_user,1,1,1,1
+access_bac_team_player,bac.team player,model_bac_team,sweepstake_player_group_user,1,0,0,0
+access_bac_team_admin,bac.team admin,model_bac_team,sweepstake_admin_group_user,1,1,1,1

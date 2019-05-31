@@ -4,12 +4,13 @@
 
         <!-- MATCH VIEWS AND ACTIONS -->
 
-        <record id="view_rwc_match_kanban" model="ir.ui.view">
-            <field name="name">rwc.match.kanban</field>
-            <field name="model">rwc.match</field>
+        <record id="view_bac_match_kanban" model="ir.ui.view">
+            <field name="name">bac.match.kanban</field>
+            <field name="model">bac.match</field>
             <field name="type">kanban</field>
             <field name="arch" type="xml">
                 <kanban string="Matches" create="false" edit="false" delete="false">
+                    <field name="id"/>
                     <field name="display_name"/>
                     <field name="flag_home"/>
                     <field name="flag_away"/>
@@ -27,7 +28,7 @@
                                     </div>
                                     <div class="oe_kanban_details" t-if="record.state.raw_value=='finished'">
                                         <div class="home-flag pull-left">
-                                            <img t-att-src="kanban_image('rwc.match', 'flag_home', record.id.value)" width="45" height="31" class="oe_kanban_avatar"/>
+                                            <img t-att-src="kanban_image('bac.match', 'flag_home', record.id.raw_value)" width="45" height="31" class="oe_kanban_avatar"/>
                                         </div>
                                         <div class="home-team pull-left">
                                             <field name="team_home"/>
@@ -46,18 +47,18 @@
                                             <field name="team_away"/>
                                         </div>
                                         <div class="away-flag pull-left">
-                                            <img t-att-src="kanban_image('rwc.match', 'flag_away', record.id.value)" width="45" height="31" class="oe_kanban_avatar"/>
+                                            <img t-att-src="kanban_image('bac.match', 'flag_away', record.id.raw_value)" width="45" height="31" class="oe_kanban_avatar"/>
                                         </div>
                                     </div>
                                     <div class="oe_kanban_details" t-if="record.state.raw_value!='finished'">
                                         <div class="home-flag pull-left">
-                                            <img t-att-src="kanban_image('rwc.match', 'flag_home', record.id.value)" width="45" height="31" class="oe_kanban_avatar"/>
+                                            <img t-att-src="kanban_image('bac.match', 'flag_home', record.id.raw_value)" width="45" height="31" class="oe_kanban_avatar"/>
                                         </div>
                                         <div class="match-display-name pull-left">
                                             <field name="display_name"/>
                                         </div>
                                         <div class="away-flag pull-left">
-                                            <img t-att-src="kanban_image('rwc.match', 'flag_away', record.id.value)" width="45" height="31" class="oe_kanban_avatar"/>
+                                            <img t-att-src="kanban_image('bac.match', 'flag_away', record.id.raw_value)" width="45" height="31" class="oe_kanban_avatar"/>
                                         </div>
                                     </div>
                                 </div>
@@ -69,9 +70,9 @@
             </field>
         </record>
 
-        <record id="view_rwc_match_tree" model="ir.ui.view">
-            <field name="name">rwc.match.tree</field>
-            <field name="model">rwc.match</field>
+        <record id="view_bac_match_tree" model="ir.ui.view">
+            <field name="name">bac.match.tree</field>
+            <field name="model">bac.match</field>
             <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Matches" create="false" edit="false" delete="false" colors="blue:state=='to_play'">
@@ -84,16 +85,16 @@
             </field>
         </record>
 
-        <record id="view_rwc_match_form" model="ir.ui.view">
-            <field name="name">rwc.match.form</field>
-            <field name="model">rwc.match</field>
+        <record id="view_bac_match_form" model="ir.ui.view">
+            <field name="name">bac.match.form</field>
+            <field name="model">bac.match</field>
             <field name="type">form</field>
             <field name="arch" type="xml">
                 <form string="Matches" create="false" edit="false" delete="false">
                     <header>
                         <button name="add_your_bet" type="object" string="Bet!" class="oe_highlight" states="to_play"/>
-                        <button name="set_as_finished" type="object" string="Finish" class="oe_highlight" states="to_play" groups="anb_russia_2018_sweepstake.sweepstake_admin_group_user"/>
-                        <button name="set_as_to_play" type="object" string="To play" states="finished" groups="anb_russia_2018_sweepstake.sweepstake_admin_group_user"/>
+                        <button name="set_as_finished" type="object" string="Finish" class="oe_highlight" states="to_play" groups="anb_brazil_2019_sweepstake.sweepstake_admin_group_user"/>
+                        <button name="set_as_to_play" type="object" string="To play" states="finished" groups="anb_brazil_2019_sweepstake.sweepstake_admin_group_user"/>
                         <field name="state" widget="statusbar" nolabel="1" statusbar_visible="to_play,finished"/>
                     </header>
                     <sheet>
@@ -175,17 +176,17 @@
             </field>
         </record>
 
-        <record id="action_rwc_open_match" model="ir.actions.act_window">
+        <record id="action_bac_open_match" model="ir.actions.act_window">
             <field name="name">Matches</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">rwc.match</field>
+            <field name="res_model">bac.match</field>
             <field name="view_type">form</field>
             <field name="view_mode">kanban,tree,form</field>
             <field name="target">current</field>
             <field name="context">{'search_default_to_play': 1, 'search_default_group_by_day': 1}</field>
-            <field name="search_view_id" ref="view_rwc_match_search"/>
+            <field name="search_view_id" ref="view_bac_match_search"/>
             <field name="help" type="html">
-                <div class="rwc-help-background"/>
+                <div class="bac-help-background"/>
                 <p class="oe_view_nocontent_create">
                     Click to add a new match.
                 </p>
@@ -217,9 +218,9 @@
 
         <!-- BET VIEWS AND ACTIONS -->
 
-        <record id="view_rwc_bet_tree" model="ir.ui.view">
-            <field name="name">rwc.bet.tree</field>
-            <field name="model">rwc.bet</field>
+        <record id="view_bac_bet_tree" model="ir.ui.view">
+            <field name="name">bac.bet.tree</field>
+            <field name="model">bac.bet</field>
             <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Bets" colors="blue:state=='to_play'">
@@ -233,9 +234,9 @@
             </field>
         </record>
 
-        <record id="view_rwc_bet_form" model="ir.ui.view">
-            <field name="name">rwc.bet.form</field>
-            <field name="model">rwc.bet</field>
+        <record id="view_bac_bet_form" model="ir.ui.view">
+            <field name="name">bac.bet.form</field>
+            <field name="model">bac.bet</field>
             <field name="type">form</field>
             <field name="arch" type="xml">
                 <form string="Bets">
@@ -279,17 +280,17 @@
             </field>
         </record>
 
-        <record id="action_rwc_open_bet" model="ir.actions.act_window">
+        <record id="action_bac_open_bet" model="ir.actions.act_window">
             <field name="name">Bets</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">rwc.bet</field>
+            <field name="res_model">bac.bet</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="target">current</field>
             <field name="context">{"search_default_to_play": 1, "search_default_my_bets": 1,}</field>
-            <field name="search_view_id" ref="view_rwc_bet_search"/>
+            <field name="search_view_id" ref="view_bac_bet_search"/>
             <field name="help" type="html">
-                <div class="rwc-help-background"/>
+                <div class="bac-help-background"/>
                 <p class="oe_view_nocontent_create">
                     Click to add a bet in any match which has not started yet.
                 </p>
@@ -323,12 +324,13 @@
 
         <!-- PLAYER VIEWS AND ACTIONS -->
 
-        <record id="view_rwc_player_kanban" model="ir.ui.view">
-            <field name="name">rwc.player.kanban</field>
-            <field name="model">rwc.player</field>
+        <record id="view_bac_player_kanban" model="ir.ui.view">
+            <field name="name">bac.player.kanban</field>
+            <field name="model">bac.player</field>
             <field name="type">kanban</field>
             <field name="arch" type="xml">
                 <kanban string="Ranking" create="false" delete="false" default_order="score_stored desc">
+                    <field name="id"/>
                     <field name="name"/>
                     <field name="pos"/>
                     <field name="score"/>
@@ -346,7 +348,7 @@
                                 </div>
                                 <div class="player-content" style="width:89%%;float:left;">
                                     <div class="o_kanban_image">
-                                        <img t-att-src="kanban_image('rwc.player', 'avatar', record.id.value)" width="60" height="60" class="oe_kanban_avatar"/>
+                                        <img t-att-src="kanban_image('bac.player', 'avatar', record.id.raw_value)" width="60" height="60" class="oe_kanban_avatar"/>
                                     </div>
                                     <div class="o_kanban_title">
                                         <field name="name"/>
@@ -357,7 +359,7 @@
                                         </ul>
                                     </div>
                                     <div>
-                                        <div class="rwc-player-score">
+                                        <div class="bac-player-score">
                                             Score: <field name="score"/>
                                         </div>
                                     </div>
@@ -370,9 +372,9 @@
             </field>
         </record>
 
-        <record id="view_rwc_player_tree" model="ir.ui.view">
-            <field name="name">rwc.player.tree</field>
-            <field name="model">rwc.player</field>
+        <record id="view_bac_player_tree" model="ir.ui.view">
+            <field name="name">bac.player.tree</field>
+            <field name="model">bac.player</field>
             <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Ranking" create="false" delete="false" default_order="score_stored desc">
@@ -387,9 +389,9 @@
             </field>
         </record>
 
-        <record id="view_rwc_player_form" model="ir.ui.view">
-            <field name="name">rwc.player.form</field>
-            <field name="model">rwc.player</field>
+        <record id="view_bac_player_form" model="ir.ui.view">
+            <field name="name">bac.player.form</field>
+            <field name="model">bac.player</field>
             <field name="type">form</field>
             <field name="arch" type="xml">
                 <form string="Ranking" create="false" delete="false">
@@ -470,16 +472,16 @@
             </field>
         </record>
 
-        <record id="action_rwc_open_player" model="ir.actions.act_window">
+        <record id="action_bac_open_player" model="ir.actions.act_window">
             <field name="name">Ranking</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">rwc.player</field>
+            <field name="res_model">bac.player</field>
             <field name="view_type">form</field>
             <field name="view_mode">kanban,tree,form</field>
             <field name="target">current</field>
-            <field name="search_view_id" ref="view_rwc_player_search"/>
+            <field name="search_view_id" ref="view_bac_player_search"/>
             <field name="help" type="html">
-                <div class="rwc-help-background"/>
+                <div class="bac-help-background"/>
                 <p class="oe_view_nocontent_create">
                     Click to add a new player.
                 </p>
@@ -517,9 +519,9 @@
 
         <!-- TEAM VIEWS AND ACTIONS -->
 
-        <record id="view_rwc_team_tree" model="ir.ui.view">
-            <field name="name">rwc.team.tree</field>
-            <field name="model">rwc.team</field>
+        <record id="view_bac_team_tree" model="ir.ui.view">
+            <field name="name">bac.team.tree</field>
+            <field name="model">bac.team</field>
             <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Teams" create="false" edit="false" delete="false">
@@ -528,9 +530,9 @@
             </field>
         </record>
 
-        <record id="view_rwc_team_form" model="ir.ui.view">
-            <field name="name">rwc.team.form</field>
-            <field name="model">rwc.team</field>
+        <record id="view_bac_team_form" model="ir.ui.view">
+            <field name="name">bac.team.form</field>
+            <field name="model">bac.team</field>
             <field name="type">form</field>
             <field name="arch" type="xml">
                 <form string="Teams" create="false" edit="false" delete="false">
@@ -549,16 +551,16 @@
             </field>
         </record>
 
-        <record id="action_rwc_open_team" model="ir.actions.act_window">
+        <record id="action_bac_open_team" model="ir.actions.act_window">
             <field name="name">Teams</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">rwc.team</field>
+            <field name="res_model">bac.team</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="target">current</field>
-            <field name="search_view_id" ref="view_rwc_team_search"/>
+            <field name="search_view_id" ref="view_bac_team_search"/>
             <field name="help" type="html">
-                <div class="rwc-help-background"/>
+                <div class="bac-help-background"/>
                 <p class="oe_view_nocontent_create">
                     Click to add a new teams.
                 </p>
@@ -579,10 +581,10 @@
 
         <!-- MENUS -->
 
-        <menuitem id="menu_rwc_sweepstake" parent="anb_russia_2018_sweepstake.menu_rwc" groups="anb_russia_2018_sweepstake.sweepstake_player_group_user" sequence="16" name="Sweepstake"/>
-            <menuitem action="action_rwc_open_match" id="menu_rwc_match" parent="anb_russia_2018_sweepstake.menu_rwc_sweepstake" groups="anb_russia_2018_sweepstake.sweepstake_player_group_user" sequence="16" name="Matches"/>
-            <menuitem action="action_rwc_open_bet" id="menu_rwc_bet" parent="anb_russia_2018_sweepstake.menu_rwc_sweepstake" groups="anb_russia_2018_sweepstake.sweepstake_player_group_user" sequence="17" name="Bets"/>
-            <menuitem action="action_rwc_open_player" id="menu_rwc_player" parent="anb_russia_2018_sweepstake.menu_rwc_sweepstake" groups="anb_russia_2018_sweepstake.sweepstake_player_group_user" sequence="18" name="Ranking"/>
-            <menuitem action="action_rwc_open_team" id="menu_rwc_team" parent="anb_russia_2018_sweepstake.menu_rwc_sweepstake" groups="anb_russia_2018_sweepstake.sweepstake_player_group_user" sequence="19" name="Teams"/>
+        <menuitem id="menu_bac_sweepstake" parent="anb_brazil_2019_sweepstake.menu_bac" groups="anb_brazil_2019_sweepstake.sweepstake_player_group_user" sequence="16" name="Sweepstake"/>
+            <menuitem action="action_bac_open_match" id="menu_bac_match" parent="anb_brazil_2019_sweepstake.menu_bac_sweepstake" groups="anb_brazil_2019_sweepstake.sweepstake_player_group_user" sequence="16" name="Matches"/>
+            <menuitem action="action_bac_open_bet" id="menu_bac_bet" parent="anb_brazil_2019_sweepstake.menu_bac_sweepstake" groups="anb_brazil_2019_sweepstake.sweepstake_player_group_user" sequence="17" name="Bets"/>
+            <menuitem action="action_bac_open_player" id="menu_bac_player" parent="anb_brazil_2019_sweepstake.menu_bac_sweepstake" groups="anb_brazil_2019_sweepstake.sweepstake_player_group_user" sequence="18" name="Ranking"/>
+            <menuitem action="action_bac_open_team" id="menu_bac_team" parent="anb_brazil_2019_sweepstake.menu_bac_sweepstake" groups="anb_brazil_2019_sweepstake.sweepstake_player_group_user" sequence="19" name="Teams"/>
     </data>
 </odoo>

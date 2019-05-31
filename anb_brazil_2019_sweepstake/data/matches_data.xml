@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <record id="match_br_bo" model="bac.match">
+            <field name="team_home" ref="anb_brazil_2019_sweepstake.br_team"/>
+            <field name="team_away" ref="anb_brazil_2019_sweepstake.bo_team"/>
+            <field name="date" eval="DateTime.strptime('2019-06-15 00:30', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_ve_pe" model="bac.match">
+            <field name="team_home" ref="anb_brazil_2019_sweepstake.ve_team"/>
+            <field name="team_away" ref="anb_brazil_2019_sweepstake.pe_team"/>
+            <field name="date" eval="DateTime.strptime('2019-06-15 19:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_ar_co" model="bac.match">
+            <field name="team_home" ref="anb_brazil_2019_sweepstake.ar_team"/>
+            <field name="team_away" ref="anb_brazil_2019_sweepstake.co_team"/>
+            <field name="date" eval="DateTime.strptime('2019-06-15 22:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_py_qa" model="bac.match">
+            <field name="team_home" ref="anb_brazil_2019_sweepstake.py_team"/>
+            <field name="team_away" ref="anb_brazil_2019_sweepstake.qa_team"/>
+            <field name="date" eval="DateTime.strptime('2019-06-16 19:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_uy_ec" model="bac.match">
+            <field name="team_home" ref="anb_brazil_2019_sweepstake.uy_team"/>
+            <field name="team_away" ref="anb_brazil_2019_sweepstake.ec_team"/>
+            <field name="date" eval="DateTime.strptime('2019-06-16 22:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_jp_cl" model="bac.match">
+            <field name="team_home" ref="anb_brazil_2019_sweepstake.jp_team"/>
+            <field name="team_away" ref="anb_brazil_2019_sweepstake.cl_team"/>
+            <field name="date" eval="DateTime.strptime('2019-06-17 23:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_bo_pe" model="bac.match">
+            <field name="team_home" ref="anb_brazil_2019_sweepstake.bo_team"/>
+            <field name="team_away" ref="anb_brazil_2019_sweepstake.pe_team"/>
+            <field name="date" eval="DateTime.strptime('2019-06-18 21:30', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_br_ve" model="bac.match">
+            <field name="team_home" ref="anb_brazil_2019_sweepstake.br_team"/>
+            <field name="team_away" ref="anb_brazil_2019_sweepstake.ve_team"/>
+            <field name="date" eval="DateTime.strptime('2019-06-19 00:30', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_co_qa" model="bac.match">
+            <field name="team_home" ref="anb_brazil_2019_sweepstake.co_team"/>
+            <field name="team_away" ref="anb_brazil_2019_sweepstake.qa_team"/>
+            <field name="date" eval="DateTime.strptime('2019-06-19 21:30', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_ar_py" model="bac.match">
+            <field name="team_home" ref="anb_brazil_2019_sweepstake.ar_team"/>
+            <field name="team_away" ref="anb_brazil_2019_sweepstake.py_team"/>
+            <field name="date" eval="DateTime.strptime('2019-06-20 00:30', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_uy_jp" model="bac.match">
+            <field name="team_home" ref="anb_brazil_2019_sweepstake.uy_team"/>
+            <field name="team_away" ref="anb_brazil_2019_sweepstake.jp_team"/>
+            <field name="date" eval="DateTime.strptime('2019-06-20 23:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_ec_cl" model="bac.match">
+            <field name="team_home" ref="anb_brazil_2019_sweepstake.ec_team"/>
+            <field name="team_away" ref="anb_brazil_2019_sweepstake.cl_team"/>
+            <field name="date" eval="DateTime.strptime('2019-06-21 23:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_bo_ve" model="bac.match">
+            <field name="team_home" ref="anb_brazil_2019_sweepstake.bo_team"/>
+            <field name="team_away" ref="anb_brazil_2019_sweepstake.ve_team"/>
+            <field name="date" eval="DateTime.strptime('2019-06-21 23:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_pe_br" model="bac.match">
+            <field name="team_home" ref="anb_brazil_2019_sweepstake.pe_team"/>
+            <field name="team_away" ref="anb_brazil_2019_sweepstake.br_team"/>
+            <field name="date" eval="DateTime.strptime('2019-06-22 19:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_co_py" model="bac.match">
+            <field name="team_home" ref="anb_brazil_2019_sweepstake.co_team"/>
+            <field name="team_away" ref="anb_brazil_2019_sweepstake.py_team"/>
+            <field name="date" eval="DateTime.strptime('2019-06-23 19:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_qa_ar" model="bac.match">
+            <field name="team_home" ref="anb_brazil_2019_sweepstake.qa_team"/>
+            <field name="team_away" ref="anb_brazil_2019_sweepstake.ar_team"/>
+            <field name="date" eval="DateTime.strptime('2019-06-23 19:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_cl_uy" model="bac.match">
+            <field name="team_home" ref="anb_brazil_2019_sweepstake.cl_team"/>
+            <field name="team_away" ref="anb_brazil_2019_sweepstake.uy_team"/>
+            <field name="date" eval="DateTime.strptime('2019-06-24 23:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_ec_jp" model="bac.match">
+            <field name="team_home" ref="anb_brazil_2019_sweepstake.ec_team"/>
+            <field name="team_away" ref="anb_brazil_2019_sweepstake.jp_team"/>
+            <field name="date" eval="DateTime.strptime('2019-06-24 23:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+
+    </data>
+</odoo>

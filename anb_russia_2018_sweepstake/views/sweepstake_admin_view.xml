@@ -18,9 +18,9 @@
                     <filter string="Finished" name="finished" domain="[('state','=','finished')]"/>
                     <separator/>
                     <group expand="0" string="Group By">
-                        <filter string="Round" name="round" domain="[]" context="{'group_by':'match_round'}"/>
-                        <filter string="State" name="state" domain="[]" context="{'group_by':'state'}"/>
-                        <filter string="Day" name="date" domain="[]" context="{'group_by':'date:day'}"/>
+                        <filter string="Round" name="group_by_round" domain="[]" context="{'group_by':'match_round'}"/>
+                        <filter string="State" name="group_by_state" domain="[]" context="{'group_by':'state'}"/>
+                        <filter string="Day" name="group_by_day" domain="[]" context="{'group_by':'date:day'}"/>
                     </group>
                </search>
             </field>
@@ -279,8 +279,8 @@
                     <filter string="Finished" name="finished" domain="[('state','=','finished')]"/>
                     <separator/>
                     <group expand="0" string="Group By">
-                        <filter string="Player" domain="[]" context="{'group_by':'player_id'}"/>
-                        <filter string="State" domain="[]" context="{'group_by':'state'}"/>
+                        <filter name="group_by_player" string="Player" domain="[]" context="{'group_by':'player_id'}"/>
+                        <filter name="group_by_state" string="State" domain="[]" context="{'group_by':'state'}"/>
                     </group>
                </search>
             </field>

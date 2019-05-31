@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <record id="ar_team" model="bac.team">
+            <field name="name">Argentina</field>
+            <field file="base/static/img/country_flags/ar.png" name="flag" type="base64" />
+        </record>
+        <record id="br_team" model="bac.team">
+            <field name="name">Brazil</field>
+            <field file="base/static/img/country_flags/br.png" name="flag" type="base64" />
+        </record>
+        <record id="bo_team" model="bac.team">
+            <field name="name">Bolivia</field>
+            <field file="base/static/img/country_flags/bo.png" name="flag" type="base64" />
+        </record>
+        <record id="cl_team" model="bac.team">
+            <field name="name">Chile</field>
+            <field file="base/static/img/country_flags/cl.png" name="flag" type="base64" />
+        </record>
+        <record id="co_team" model="bac.team">
+            <field name="name">Colombia</field>
+            <field file="base/static/img/country_flags/co.png" name="flag" type="base64" />
+        </record>
+        <record id="ec_team" model="bac.team">
+            <field name="name">Ecuador</field>
+            <field file="base/static/img/country_flags/ec.png" name="flag" type="base64" />
+        </record>
+        <record id="jp_team" model="bac.team">
+            <field name="name">Japan</field>
+            <field file="base/static/img/country_flags/jp.png" name="flag" type="base64" />
+        </record>
+        <record id="py_team" model="bac.team">
+            <field name="name">Paraguay</field>
+            <field file="base/static/img/country_flags/py.png" name="flag" type="base64" />
+        </record>
+        <record id="pe_team" model="bac.team">
+            <field name="name">Peru</field>
+            <field file="base/static/img/country_flags/pe.png" name="flag" type="base64" />
+        </record>
+        <record id="qa_team" model="bac.team">
+            <field name="name">Qatar</field>
+            <field file="base/static/img/country_flags/qa.png" name="flag" type="base64" />
+        </record>
+        <record id="uy_team" model="bac.team">
+            <field name="name">Uruguay</field>
+            <field file="base/static/img/country_flags/uy.png" name="flag" type="base64" />
+        </record>
+        <record id="ve_team" model="bac.team">
+            <field name="name">Venezuela</field>
+            <field file="base/static/img/country_flags/ve.png" name="flag" type="base64" />
+        </record>
+
+    </data>
+</odoo>
