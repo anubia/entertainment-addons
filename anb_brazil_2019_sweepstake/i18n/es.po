@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-31 11:41+0000\n"
-"PO-Revision-Date: 2019-05-31 13:42+0200\n"
+"POT-Creation-Date: 2019-05-31 12:16+0000\n"
+"PO-Revision-Date: 2019-05-31 14:18+0200\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "Language: es\n"
@@ -58,14 +58,34 @@ msgstr ""
 "                    puntúan con su apuesta."
 
 #. module: anb_brazil_2019_sweepstake
-#: code:addons/anb_brazil_2019_sweepstake/models/sweepstake.py:235
+#: code:addons/anb_brazil_2019_sweepstake/models/sweepstake.py:239
 #: sql_constraint:bac.bet:0
 #, python-format
 msgid "A player cannot have more than one bet in a match."
 msgstr "Un jugador no puede tener más de una apuesta en un partido."
 
 #. module: anb_brazil_2019_sweepstake
-#: code:addons/anb_brazil_2019_sweepstake/models/sweepstake.py:89
+#: model:ir.model,name:anb_brazil_2019_sweepstake.model_bac_match
+msgid "A real match where bets are allowed"
+msgstr "Un partido real en el que las apuestas están permitidas"
+
+#. module: anb_brazil_2019_sweepstake
+#: model:ir.model,name:anb_brazil_2019_sweepstake.model_bac_team
+msgid "A real national team"
+msgstr "Un equipo nacional real"
+
+#. module: anb_brazil_2019_sweepstake
+#: model:ir.model,name:anb_brazil_2019_sweepstake.model_bac_bet
+msgid "A sweepstake bet made by a player in a real match"
+msgstr "Una apuesta de la porra hecha por un jugador en un partido real"
+
+#. module: anb_brazil_2019_sweepstake
+#: model:ir.model,name:anb_brazil_2019_sweepstake.model_bac_player
+msgid "A sweepstake player"
+msgstr "Un jugador de la porra"
+
+#. module: anb_brazil_2019_sweepstake
+#: code:addons/anb_brazil_2019_sweepstake/models/sweepstake.py:90
 #: sql_constraint:bac.player:0
 #, python-format
 msgid "A user cannot have more than one participant."
@@ -107,6 +127,12 @@ msgstr "Alias"
 #: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_player__avatar
 msgid "Avatar"
 msgstr "Avatar"
+
+#. module: anb_brazil_2019_sweepstake
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet__flag_away
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_match__flag_away
+msgid "Away flag"
+msgstr "Bandera visitante"
 
 #. module: anb_brazil_2019_sweepstake
 #: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet__score_away
@@ -332,7 +358,7 @@ msgid "Finished"
 msgstr "Finalizado"
 
 #. module: anb_brazil_2019_sweepstake
-#: code:addons/anb_brazil_2019_sweepstake/models/sweepstake.py:442
+#: code:addons/anb_brazil_2019_sweepstake/models/sweepstake.py:449
 #, python-format
 msgid ""
 "First, create a participant for your user. Ask the game manager for that if "
@@ -342,10 +368,6 @@ msgstr ""
 "juego si no tienes permisos suficientes para crear jugadores."
 
 #. module: anb_brazil_2019_sweepstake
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet__flag_away
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet__flag_home
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_match__flag_away
-#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_match__flag_home
 #: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_team__flag
 msgid "Flag"
 msgstr "Bandera"
@@ -392,6 +414,12 @@ msgstr "Aciertos"
 #: model_terms:ir.ui.view,arch_db:anb_brazil_2019_sweepstake.view_bac_player_kanban
 msgid "Hits:"
 msgstr "Aciertos:"
+
+#. module: anb_brazil_2019_sweepstake
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet__flag_home
+#: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_match__flag_home
+msgid "Home flag"
+msgstr "Bandera local"
 
 #. module: anb_brazil_2019_sweepstake
 #: model:ir.model.fields,field_description:anb_brazil_2019_sweepstake.field_bac_bet__score_home
@@ -725,8 +753,8 @@ msgid "To play"
 msgstr "Por jugar"
 
 #. module: anb_brazil_2019_sweepstake
-#: code:addons/anb_brazil_2019_sweepstake/models/sweepstake.py:247
-#: code:addons/anb_brazil_2019_sweepstake/models/sweepstake.py:473
+#: code:addons/anb_brazil_2019_sweepstake/models/sweepstake.py:251
+#: code:addons/anb_brazil_2019_sweepstake/models/sweepstake.py:480
 #, python-format
 msgid "Too late to bet! Bets are forbidden after the beginning of the match."
 msgstr ""
@@ -734,7 +762,7 @@ msgstr ""
 "inicio del partido."
 
 #. module: anb_brazil_2019_sweepstake
-#: code:addons/anb_brazil_2019_sweepstake/models/sweepstake.py:271
+#: code:addons/anb_brazil_2019_sweepstake/models/sweepstake.py:275
 #, python-format
 msgid "Too late to bet! Bets forbidden after the beginning of the match."
 msgstr ""
@@ -779,26 +807,6 @@ msgstr ""
 "                    Si no aciertas el resultado exacto pero sí quién gana\n"
 "                    o si empatan, ganas por defecto 8 puntos.\n"
 "                    De otra manera, no ganas ningún punto."
-
-#. module: anb_brazil_2019_sweepstake
-#: model:ir.model,name:anb_brazil_2019_sweepstake.model_bac_bet
-msgid "bac.bet"
-msgstr ""
-
-#. module: anb_brazil_2019_sweepstake
-#: model:ir.model,name:anb_brazil_2019_sweepstake.model_bac_match
-msgid "bac.match"
-msgstr ""
-
-#. module: anb_brazil_2019_sweepstake
-#: model:ir.model,name:anb_brazil_2019_sweepstake.model_bac_player
-msgid "bac.player"
-msgstr ""
-
-#. module: anb_brazil_2019_sweepstake
-#: model:ir.model,name:anb_brazil_2019_sweepstake.model_bac_team
-msgid "bac.team"
-msgstr ""
 
 #~ msgid "Day"
 #~ msgstr "Día"

@@ -356,7 +356,7 @@
                                         <ul style="font-weight: normal;">
                                             <li>Hits: <field name="hits"/></li>
                                             <li>Full hits: <field name="full_hits"/></li>
-                                            <li><field name="score_stored" invisible="1"/></li>
+                                            <field name="score_stored" invisible="1"/>
                                         </ul>
                                     </div>
                                     <div>

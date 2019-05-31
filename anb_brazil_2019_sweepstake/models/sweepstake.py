@@ -12,6 +12,7 @@ _logger = logging.getLogger(__name__)
 
 class BACPlayer(models.Model):
     _name = 'bac.player'
+    _description = 'A sweepstake player'
     _order = 'name, score_stored desc'
 
     @api.multi
@@ -92,6 +93,7 @@ class BACPlayer(models.Model):
 
 class BACBet(models.Model):
     _name = 'bac.bet'
+    _description = 'A sweepstake bet made by a player in a real match'
     _order = 'date desc'
 
     @api.multi
@@ -187,10 +189,12 @@ class BACBet(models.Model):
     flag_home = fields.Binary(
         related='team_home.flag',
         readonly=True,
+        string='Home flag',
     )
     flag_away = fields.Binary(
         related='team_away.flag',
         readonly=True,
+        string='Away flag',
     )
     score_home = fields.Integer(
         string='Home score',
@@ -279,6 +283,7 @@ class BACBet(models.Model):
 
 class BACMatch(models.Model):
     _name = 'bac.match'
+    _description = 'A real match where bets are allowed'
     _order = 'date'
 
     @api.multi
@@ -356,10 +361,12 @@ class BACMatch(models.Model):
     flag_home = fields.Binary(
         related='team_home.flag',
         readonly=True,
+        string='Home flag',
     )
     flag_away = fields.Binary(
         related='team_away.flag',
         readonly=True,
+        string='Away flag',
     )
     score_home = fields.Integer(
         string='Home score',
@@ -478,6 +485,7 @@ class BACMatch(models.Model):
 
 class BACTeam(models.Model):
     _name = 'bac.team'
+    _description = 'A real national team'
     _order = 'name'
 
     name = fields.Char(
