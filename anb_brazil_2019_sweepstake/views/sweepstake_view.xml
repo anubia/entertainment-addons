@@ -183,6 +183,7 @@
             <field name="view_type">form</field>
             <field name="view_mode">kanban,tree,form</field>
             <field name="target">current</field>
+            <!-- Following line triggers the Odoo bug: https://github.com/odoo/odoo/issues/33793 -->
             <field name="context">{'search_default_to_play': 1, 'search_default_group_by_day': 1}</field>
             <field name="search_view_id" ref="view_bac_match_search"/>
             <field name="help" type="html">
@@ -355,7 +356,7 @@
                                         <ul style="font-weight: normal;">
                                             <li>Hits: <field name="hits"/></li>
                                             <li>Full hits: <field name="full_hits"/></li>
-                                            <li><field name="score_stored" invisible="1"/></li>
+                                            <field name="score_stored" invisible="1"/>
                                         </ul>
                                     </div>
                                     <div>

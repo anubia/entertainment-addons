@@ -1,25 +1,6 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-#
-#    Mandate module for openERP
-#    Copyright (C) 2018-TODAY Anubía, soluciones en la nube,SL
-#                             (http://www.anubia.es)
-#    @author: Juan Formoso Vasco <jfv@anubia.es>,
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# Copyright 2019-TODAY Juan Formoso Vasco <jfv@anubia.es>
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 {
     'name': 'Brazil American Cup 2019 Sweepstake',
@@ -33,7 +14,7 @@
 - Anubia Soluciones en la Nube, S.L.
 """,
     'category': 'Extra Tools',
-    'version': '10.0.0.1',
+    'version': '11.0.0.1',
     'author': 'Anubía Soluciones en la Nube, SL, Juan Formoso Vasco',
     'maintainer': 'Anubía Soluciones en la Nube, SL, Juan Formoso Vasco',
     'contributors': [
