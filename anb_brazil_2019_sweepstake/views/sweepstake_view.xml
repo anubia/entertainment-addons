@@ -16,10 +16,11 @@
                     <field name="flag_away"/>
                     <field name="match_round"/>
                     <field name="date"/>
+                    <field name="bet_made"/>
                     <field name="state"/>
                     <templates>
                         <t t-name="kanban-box">
-                            <div t-attf-class="oe_kanban_global_click">
+                            <div t-attf-class="oe_kanban_global_click #{record.bet_made.raw_value ? '' : 'match-bet-not-made'}">
                                 <div class="match-state finished" title="Finished" t-if="record.state.raw_value=='finished'"/>
                                 <div class="match-state to-play" title="To play" t-if="record.state.raw_value!='finished'"/>
                                 <div class="o_kanban_card_header">

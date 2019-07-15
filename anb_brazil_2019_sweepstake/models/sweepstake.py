@@ -287,6 +287,15 @@ class BACMatch(models.Model):
     _order = 'date'
 
     @api.multi
+    def _compute_bet_made(self):
+        for match in self:
+            if self.env.user.id in match.bet_ids.mapped('player_id').\
+               mapped('user_id').ids:
+                match.bet_made = True
+            else:
+                match.bet_made = False
+
+    @api.multi
     def name_get(self):
         result = []
         for match in self:
@@ -428,6 +437,10 @@ class BACMatch(models.Model):
         string='State',
         default='to_play',
         readonly=True,
+    )
+    bet_made = fields.Boolean(
+        compute='_compute_bet_made',
+        string='Bet made',
     )
 
     @api.multi

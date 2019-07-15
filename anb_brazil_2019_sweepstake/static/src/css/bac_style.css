@@ -41,6 +41,10 @@ div.match-state {
     color: #ffffff;
 }
 
+div.match-bet-not-made {
+    background: #000000 !important;
+}
+
 div.match-state.finished {
     background: #7c7bad;
 }
@@ -63,6 +67,10 @@ div.match-display-name {
     text-align: center;
     vertical-align: middle;
     font-weight: bold;
+}
+
+div.match-bet-not-made div.match-display-name {
+    color: #ffffff !important;
 }
 
 div.home-flag {
